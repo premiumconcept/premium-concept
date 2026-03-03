@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Concept | Luxury Event Styling</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
+
 body {
     margin: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #0b0b0b;
     color: #ffffff;
 }
 
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd53') center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 3rem;
+h1, h2 {
+    font-family: 'Playfair Display', serif;
     letter-spacing: 2px;
 }
 
-.tagline {
-    color: #d4af37;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+                url('Event 1.JPG');
+    background-size: cover;
+    background-position: center;
 }
 
-.cta-btn {
-    padding: 12px 30px;
-    background-color: #d4af37;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
+header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    color: #d4af37;
 }
 
 section {
@@ -44,253 +45,110 @@ section {
     text-align: center;
 }
 
-h2 {
-    color: #d4af37;
-    margin-bottom: 40px;
-}
-
-.service-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.service-card {
-    background: #111;
-    padding: 30px;
-    width: 250px;
-    border: 1px solid #d4af37;
+.about {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
 }
 
 .gallery-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+    margin-top: 40px;
 }
 
 .gallery-grid img {
-    width: 300px;
-    border: 2px solid #d4af37;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
 }
 
-.booking form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: auto;
+.gallery-grid img:hover {
+    transform: scale(1.05);
 }
 
-.booking input,
-.booking textarea {
-    padding: 10px;
-    border: none;
-}
-
-.booking button {
-    padding: 12px;
-    background-color: #d4af37;
-    border: none;
-    font-weight: bold;
-}
-
-footer {
-    background: #000;
-    padding: 20px;
-}
-</style>
-<meta charset="UTF-8">
-<<meta name="description" content="Premium Concept – Where luxury meets precision.">
-<meta name="keywords" content="Luxury Brand, Premium Services, Bespoke, High-End, Nigeria Luxury">
-<meta name="author" content="Premium Concept">
-<meta property="og:title" content="Premium Concept">
-<meta property="og:description" content="Where luxury meets precision.">
-<meta property="og:type" content="website">>
-<title>Premium Concept | Where Premium Meets Fun</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #000;
-    color: #fff;
-}
-
-header {
-    background: #000;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid gold;
-}
-
-header h1 {
-    font-family: 'Playfair Display', serif;
-    color: gold;
-    font-size: 28px;
-    margin: 0;
-}
-
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(to bottom, #000, #111);
-}
-
-.hero h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 18px;
-    color: #ccc;
-    max-width: 600px;
-    margin: auto;
-}
-
-.button {
+.contact-btn {
     display: inline-block;
-    margin-top: 30px;
-    padding: 15px 30px;
-    background: gold;
-    color: black;
+    margin-top: 40px;
+    padding: 15px 35px;
+    background-color: #d4af37;
+    color: #000;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: 0.3s;
 }
 
-.section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.section h3 {
-    color: gold;
-    font-size: 26px;
-    margin-bottom: 20px;
-}
-
-.services {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 800px;
-    margin: auto;
-}
-
-.service-box {
-    border: 1px solid gold;
-    padding: 30px;
-    border-radius: 8px;
+.contact-btn:hover {
+    background-color: #ffffff;
 }
 
 footer {
-    text-align: center;
     padding: 30px;
-    border-top: 1px solid gold;
+    background: #000;
     font-size: 14px;
-    color: #aaa;
-}
-    .trust-bar {
-  background: #111;
-  padding: 20px;
-  text-align: center;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
+    color: #888;
 }
 
-.trust-container {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
 </style>
 </head>
 
-<header class="hero">
-    <div class="overlay">
-        <h1>Premium Concept</h1>
-        <p class="tagline">Luxury. Precision. Excellence.</p>
-        <a href="#booking" class="cta-btn">Book Now</a>
-    </div>
+<body>
+
+<header>
+    <h1>Premium Concept</h1>
+    <p>Luxury Event Styling & Decoration</p>
 </header>
 
-<section class="about">
-    <div class="container">
-        <h2>About Us</h2>
+<section>
+    <h2>About Us</h2>
+    <div class="about">
         <p>
-            Premium Concept delivers elite, luxury-standard services tailored for
-            clients who value class, professionalism, and premium experience.
-            We redefine excellence through attention to detail and refined execution.
+            At Premium Concept, we create unforgettable luxury event experiences.
+            From weddings to corporate events, we transform spaces into timeless masterpieces.
         </p>
     </div>
 </section>
 
-<section class="services">
-    <div class="container">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>Luxury Experience</h3>
-                <p>High-end service delivery crafted for premium clients.</p>
-            </div>
-            <div class="service-card">
-                <h3>Professional Team</h3>
-                <p>Experienced professionals dedicated to excellence.</p>
-            </div>
-            <div class="service-card">
-                <h3>Trusted Quality</h3>
-                <p>Consistent reliability with superior execution.</p>
-            </div>
-        </div>
+<section>
+    <h2>Our Events</h2>
+    <div class="gallery-grid">
+        <img src="Event 1.JPG" alt="Event 1">
+        <img src="Event 2.JPG" alt="Event 2">
+        <img src="Event 3.JPG" alt="Event 3">
+        <img src="Event 4.JPG" alt="Event 4">
+        <img src="Event 5.JPG" alt="Event 5">
+        <img src="Event 6.JPG" alt="Event 6">
+        <img src="Event 7.JPG" alt="Event 7">
     </div>
 </section>
 
-<section class="gallery">
-    <div class="container">
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-            <img src="https://via.placeholder.com/400" alt="Gallery Image 1">
-            <img src="https://via.placeholder.com/400" alt="Gallery Image 2">
-            <img src="https://via.placeholder.com/400" alt="Gallery Image 3">
-        </div>
-    </div>
-</section>
-
-<section id="booking" class="booking">
-    <div class="container">
-        <h2>Book an Appointment</h2>
-        <form action="https://formsubmit.co/YOUR-EMAIL@example.com" method="POST">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
-            <textarea name="message" placeholder="Your Request"></textarea>
-            <button type="submit">Submit Booking</button>
-        </form>
-    </div>
-</section>
-
-<section class="contact">
-    <div class="container">
-        <h2>Contact Us</h2>
-        <p>Email: premiumconcept@email.com</p>
-        <p>WhatsApp: +234XXXXXXXXXX</p>
-        <a href="https://wa.me/234XXXXXXXXXX" class="whatsapp-btn">Chat on WhatsApp</a>
-    </div>
+<section>
+    <h2>Book Us</h2>
+    <a href="https://wa.me/234XXXXXXXXXX" class="contact-btn">
+        Contact on WhatsApp
+    </a>
 </section>
 
 <footer>
-    <p>© 2026 Premium Concept. All Rights Reserved.</p>
+    © 2026 Premium Concept. All Rights Reserved.
 </footer>
 
-
-    
-
+</body>
 </html>
+
+   
+
+
+
+
+
+
+   
+
+   
+
+
