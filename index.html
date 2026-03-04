@@ -7,173 +7,145 @@
 
 <style>
 
+/* ===== GLOBAL STYLES ===== */
+
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     background: black;
     color: white;
     overflow-x: hidden;
 }
 
-/* ===== Watermark Text ===== */
+/* Subtle Gold Pattern Background */
 body::before {
-    content: "PREMIUM CONCEPT  •  ELEVATING EXCELLENCE";
+    content: "";
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-25deg);
-    font-size: 60px;
-    color: gold;
-    opacity: 0.03;
-    white-space: nowrap;
-    pointer-events: none;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,215,0,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: moveBackground 80s linear infinite;
     z-index: 0;
 }
 
-/* ===== Logo Watermark ===== */
-body::after {
-    content: "";
-    position: fixed;
-    top: 20%;
-    right: 10%;
-    width: 400px;
-    height: 400px;
-    background: url('logo.PNG') no-repeat center;
-    background-size: contain;
-    opacity: 0.04;
-    pointer-events: none;
-    z-index: 0;
+@keyframes moveBackground {
+    from { transform: translate(0,0); }
+    to { transform: translate(-300px,-300px); }
 }
 
 section {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding: 100px 20px;
     text-align: center;
 }
 
-h1 {
-    font-size: 50px;
-    color: gold;
-    margin-bottom: 10px;
+/* ===== HERO SECTION ===== */
+
+.hero {
+    position: relative;
+    padding-top: 150px;
+    padding-bottom: 150px;
 }
 
-h2 {
-    font-size: 32px;
-    color: gold;
-}
-
-.tagline {
-    letter-spacing: 5px;
-    color: #d4af37;
-    margin-bottom: 30px;
+/* Watermark Logo */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    background: url('logo.svg') no-repeat center;
+    background-size: contain;
+    opacity: 0.05;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
 .logo {
-    width: 220px;
+    width: 200px;
     margin-bottom: 20px;
-    filter: drop-shadow(0 0 20px gold);
 }
 
-p {
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.8;
-    opacity: 0.85;
+.tagline {
+    color: gold;
+    letter-spacing: 6px;
+    font-size: 18px;
+    margin-top: 10px;
 }
 
 .btn {
     display: inline-block;
-    margin-top: 35px;
-    padding: 15px 40px;
+    margin-top: 40px;
+    padding: 15px 45px;
     background: gold;
     color: black;
     font-weight: bold;
     text-decoration: none;
     border-radius: 8px;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .btn:hover {
     background: #d4af37;
-    box-shadow: 0 0 30px gold;
+    box-shadow: 0 0 25px gold;
     transform: scale(1.05);
 }
 
-/* ===== Services ===== */
+/* ===== SERVICES ===== */
+
+h2 {
+    color: gold;
+    font-size: 32px;
+}
+
 .services {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .service-box {
     background: #111;
-    padding: 35px;
+    padding: 40px;
     border-radius: 15px;
     border: 1px solid #222;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .service-box:hover {
-    border-color: gold;
-    box-shadow: 0 0 20px rgba(255,215,0,0.4);
     transform: translateY(-10px);
+    border-color: gold;
 }
 
-/* ===== Slideshow ===== */
-.slideshow-container {
+/* ===== GALLERY SLIDESHOW ===== */
+
+.slideshow {
     position: relative;
-    max-width: 900px;
-    margin: 60px auto 0 auto;
+    max-width: 800px;
+    margin: 60px auto 0;
 }
 
-.slide {
+.slides {
     display: none;
 }
 
-.slide img {
+.slides img {
     width: 100%;
     border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255,215,0,0.2);
 }
 
 .fade {
-    animation: fade 1.5s;
+    animation: fadeEffect 1.5s;
 }
 
-@keyframes fade {
+@keyframes fadeEffect {
     from {opacity: .4}
     to {opacity: 1}
-}
-
-/* Arrows */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    padding: 16px;
-    color: gold;
-    font-weight: bold;
-    font-size: 22px;
-    transition: 0.3s ease;
-    user-select: none;
-}
-
-.next {
-    right: 0;
-}
-
-.prev:hover, .next:hover {
-    color: white;
-}
-
-/* Footer */
-footer {
-    padding: 40px;
-    background: black;
-    opacity: 0.6;
-    font-size: 14px;
 }
 
 </style>
@@ -181,103 +153,91 @@ footer {
 
 <body>
 
-<section>
-    <img src="logo.PNG" class="logo">
-    <h1>PREMIUM CONCEPT</h1>
+<!-- HERO -->
+<section class="hero">
+    <img src="logo.svg" class="logo">
     <div class="tagline">ELEVATING EXCELLENCE</div>
-    <p>
-        Lagos’ premium mascot and entertainment brand delivering unforgettable,
-        luxury event experiences tailored for birthdays, schools, and corporate activations.
-    </p>
-    <a href="https://wa.me/2348132370407" class="btn">Book Now on WhatsApp</a>
+    <p>We deliver premium event experiences, luxury styling, and exceptional service tailored to exceed expectations.</p>
+    <a href="#services" class="btn">Explore Services</a>
 </section>
 
-<section>
-    <h2>Our Premium Services</h2>
-    <p>We create high-end entertainment experiences customized to exceed expectations.</p>
-
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our Services</h2>
     <div class="services">
         <div class="service-box">
-            <h3>Mascot Entertainment</h3>
-            <p>High-energy character performances for unforgettable moments.</p>
+            <h3>Luxury Event Planning</h3>
+            <p>Complete high-end event management tailored to perfection.</p>
         </div>
         <div class="service-box">
-            <h3>Luxury Birthday Experiences</h3>
-            <p>Magical celebrations crafted with elegance and excellence.</p>
+            <h3>Premium Styling</h3>
+            <p>Elegant décor and creative designs that elevate your event atmosphere.</p>
         </div>
         <div class="service-box">
-            <h3>Corporate Activations</h3>
-            <p>Brand-driven event engagement that elevates visibility.</p>
+            <h3>Corporate Experiences</h3>
+            <p>Professional setups designed to impress and inspire.</p>
         </div>
         <div class="service-box">
-            <h3>Themed Event Experiences</h3>
-            <p>Customized concepts tailored to your celebration goals.</p>
+            <h3>Private Celebrations</h3>
+            <p>Exclusive birthday, wedding and VIP celebration planning.</p>
         </div>
     </div>
 </section>
 
+<!-- GALLERY -->
 <section>
-    <h2>Event Showcase</h2>
+    <h2>Gallery</h2>
 
-    <div class="slideshow-container">
+    <div class="slideshow">
 
-        <div class="slide fade">
-            <img src="Event 1 .JPG">
+        <div class="slides fade">
+            <img src="event1.jpg">
         </div>
 
-        <div class="slide fade">
-            <img src="Event 2 .JPG">
+        <div class="slides fade">
+            <img src="event2.jpg">
         </div>
 
-        <div class="slide fade">
-            <img src="Event 3 .JPG">
+        <div class="slides fade">
+            <img src="event3.jpg">
         </div>
 
-        <div class="slide fade">
-            <img src="Event 4 .JPG">
+        <div class="slides fade">
+            <img src="event4.jpg">
         </div>
 
-        <div class="slide fade">
-            <img src="Event 5.JPG">
+        <div class="slides fade">
+            <img src="event5.jpg">
         </div>
 
-        <div class="slide fade">
-            <img src="Event 6.JPG">
+        <div class="slides fade">
+            <img src="event6.jpg">
         </div>
 
-        <div class="slide fade">
-            <img src="Event 7.JPG">
+        <div class="slides fade">
+            <img src="event7.jpg">
         </div>
-
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlides(1)">❯</a>
 
     </div>
 </section>
-
-<footer>
-© 2026 Premium Concept | Elevating Excellence
-</footer>
 
 <script>
+
 let slideIndex = 0;
 showSlides();
 
 function showSlides() {
-    let slides = document.getElementsByClassName("slide");
-    for (let i = 0; i < slides.length; i++) {
+    let i;
+    let slides = document.getElementsByClassName("slides");
+    for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
+    if (slideIndex > slides.length) { slideIndex = 1 }
     slides[slideIndex-1].style.display = "block";
     setTimeout(showSlides, 4000);
 }
 
-function plusSlides(n) {
-    slideIndex += n-1;
-    showSlides();
-}
 </script>
 
 </body>
