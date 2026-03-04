@@ -5,282 +5,333 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Concept</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:#000;color:#fff;font-family:'Poppins',sans-serif;}
-
-/* ================= HERO ================= */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:60px 20px;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* 🔥 EVEN BIGGER LOGO */
+body{
+font-family:'Poppins',sans-serif;
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+text-align:center;
+padding:70px 20px 40px;
+}
+
 .logo{
-    width:380px;
-    margin-bottom:30px;
+width:300px;  /* Increased logo size */
+margin-bottom:20px;
+}
+
+.tagline{
+font-size:13px;
+letter-spacing:4px;
+color:#D4AF37;
+text-transform:uppercase;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:60px 20px;
+max-width:900px;
+margin:auto;
 }
 
 .hero h1{
-    font-family:'Playfair Display',serif;
-    font-size:34px;
-    color:#E5C76B;
-    margin-bottom:20px;
+font-family:'Playfair Display',serif;
+font-size:42px;
+margin-bottom:20px;
 }
 
 .hero p{
-    max-width:600px;
-    color:#ccc;
-    margin-bottom:35px;
-    line-height:1.7;
+opacity:0.85;
+font-size:16px;
 }
 
-.btn{
-    padding:14px 40px;
-    border-radius:6px;
-    text-decoration:none;
-    font-weight:500;
-    color:#000;
-    background:linear-gradient(135deg,#E5C76B,#C6A84E);
-}
-
-/* ================= SERVICES SLIDER ================= */
-
+/* SERVICES */
 .services{
-    padding:80px 20px;
-    text-align:center;
+padding:80px 20px;
+text-align:center;
 }
 
 .services h2{
-    font-family:'Playfair Display',serif;
-    color:#E5C76B;
-    margin-bottom:40px;
+font-family:'Playfair Display',serif;
+margin-bottom:50px;
+font-size:32px;
 }
 
-.service-slider{
-    position:relative;
-    max-width:600px;
-    margin:auto;
-    overflow:hidden;
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+max-width:1100px;
+margin:auto;
 }
 
-.service-slide{
-    display:none;
-    background:#111;
-    padding:40px;
-    border-radius:10px;
+.service-box{
+border:1px solid #222;
+padding:35px 25px;
+transition:0.4s ease;
+background:#0a0a0a;
 }
 
-.service-slide.active{
-    display:block;
+.service-box:hover{
+border-color:#D4AF37;
+transform:translateY(-6px);
 }
 
-.service-slide h3{
-    color:#E5C76B;
-    margin-bottom:15px;
+.service-box h3{
+color:#D4AF37;
+margin-bottom:15px;
 }
 
-.arrow{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    font-size:30px;
-    color:#E5C76B;
-    cursor:pointer;
-    user-select:none;
-}
-
-.arrow.left{left:-40px;}
-.arrow.right{right:-40px;}
-
-/* ================= GALLERY ================= */
-
+/* GALLERY */
 .gallery{
-    padding:80px 20px;
-    text-align:center;
+padding:90px 20px;
+text-align:center;
 }
 
 .gallery h2{
-    font-family:'Playfair Display',serif;
-    color:#E5C76B;
-    margin-bottom:40px;
+font-family:'Playfair Display',serif;
+margin-bottom:50px;
+font-size:32px;
 }
 
 .slideshow{
-    max-width:900px;
-    margin:auto;
-    position:relative;
+position:relative;
+max-width:950px;
+margin:auto;
+overflow:hidden;
 }
 
 .slide{
-    position:absolute;
-    width:100%;
-    opacity:0;
-    transition:opacity 1s ease-in-out;
+position:absolute;
+width:100%;
+opacity:0;
+transition:opacity 1s ease-in-out;
 }
 
 .slide.active{
-    opacity:1;
-    position:relative;
+opacity:1;
+position:relative;
 }
 
 .slide img{
-    width:100%;
-    border-radius:10px;
+width:100%;
+border-radius:10px;
 }
 
 .caption{
-    position:absolute;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    background:rgba(0,0,0,0.6);
-    padding:10px 20px;
-    border-radius:5px;
-    font-size:14px;
-    color:#E5C76B;
+position:absolute;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+background:rgba(0,0,0,0.75);
+padding:18px 30px;
+border-radius:8px;
+text-align:center;
 }
 
-/* ================= WHATSAPP FLOAT ================= */
+.caption span{
+display:block;
+font-size:12px;
+letter-spacing:2px;
+color:#D4AF37;
+margin-bottom:6px;
+text-transform:uppercase;
+}
 
+.caption p{
+font-size:14px;
+}
+
+/* ARROWS */
+.prev,.next{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:28px;
+background:rgba(0,0,0,0.6);
+padding:10px 18px;
+cursor:pointer;
+color:#fff;
+border-radius:4px;
+}
+
+.prev{left:15px;}
+.next{right:15px;}
+
+.prev:hover,.next:hover{
+background:#D4AF37;
+color:#000;
+}
+
+/* WHATSAPP */
 .whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    width:60px;
-    height:60px;
-    background:#25D366;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:30px;
-    color:white;
-    text-decoration:none;
-    box-shadow:0 4px 15px rgba(0,0,0,0.5);
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+color:#fff;
+text-decoration:none;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+z-index:1000;
 }
 
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer{
-    padding:30px;
-    text-align:center;
-    font-size:14px;
-    color:#777;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:768px){
-    .logo{width:260px;}
-    .hero h1{font-size:26px;}
-    .arrow.left{left:5px;}
-    .arrow.right{right:5px;}
+text-align:center;
+padding:40px 20px;
+border-top:1px solid #111;
+margin-top:80px;
+font-size:14px;
+opacity:0.8;
 }
 </style>
 </head>
 
 <body>
 
+<header>
+<img src="logo.svg" class="logo">
+<div class="tagline">Where Premium Meets Fun</div>
+</header>
+
 <section class="hero">
-    <img src="logo.svg" class="logo">
-    <h1>Where Premium Meets Fun</h1>
-    <p>Lagos’ premium mascot & costume entertainment brand for kids and corporate events. We create unforgettable memories with class, excellence, and energy.</p>
-    <a href="https://wa.me/2348132370407" class="btn">Book a Call</a>
+<h1>Luxury Mascot & Event Entertainment</h1>
+<p>We create unforgettable mascot experiences for birthdays, corporate activations and themed celebrations.</p>
 </section>
 
 <section class="services">
-    <h2>Our Services</h2>
+<h2>Our Services</h2>
+<div class="service-grid">
 
-    <div class="service-slider">
-        <div class="arrow left" onclick="prevService()">❮</div>
-        <div class="arrow right" onclick="nextService()">❯</div>
+<div class="service-box">
+<h3>Kids Birthday Packages</h3>
+<p>Live mascot dance, interactive games and full crowd engagement.</p>
+</div>
 
-        <div class="service-slide active">
-            <h3>Kids Birthday Mascots</h3>
-            <p>High-energy character appearances that create magical party experiences.</p>
-        </div>
+<div class="service-box">
+<h3>Corporate Events</h3>
+<p>Professional brand activation mascots and promotional character appearances.</p>
+</div>
 
-        <div class="service-slide">
-            <h3>Corporate Entertainment</h3>
-            <p>Professional costume performances for brand launches and company events.</p>
-        </div>
+<div class="service-box">
+<h3>Custom Character Booking</h3>
+<p>Themed costumes tailored to elevate your event experience.</p>
+</div>
 
-        <div class="service-slide">
-            <h3>Custom Character Booking</h3>
-            <p>Tailored mascot experiences designed to match your event theme.</p>
-        </div>
-    </div>
+</div>
 </section>
 
 <section class="gallery">
-    <h2>Event Highlights</h2>
+<h2>Event Highlights</h2>
 
-    <div class="slideshow">
+<div class="slideshow">
 
-        <div class="slide active">
-            <img src="event1.JPG">
-            <p class="caption">Kids Birthday Celebration</p>
-        </div>
+<div class="slide active">
+<img src="event1.JPG">
+<div class="caption">
+<span>Kids Birthday Package</span>
+<p>High Energy Mascot Dance Performance</p>
+</div>
+</div>
 
-        <div class="slide">
-            <img src="event2.JPG">
-            <p class="caption">Corporate Brand Activation</p>
-        </div>
+<div class="slide">
+<img src="event2.JPG">
+<div class="caption">
+<span>Meet & Greet Session</span>
+<p>Interactive Character Engagement With Children</p>
+</div>
+</div>
 
-        <div class="slide">
-            <img src="event3.JPG">
-            <p class="caption">School Fun Day Event</p>
-        </div>
+<div class="slide">
+<img src="event3.JPG">
+<div class="caption">
+<span>Corporate Activation</span>
+<p>Professional Brand Appearance & Promotion</p>
+</div>
+</div>
 
-    </div>
+<div class="slide">
+<img src="event4.JPG">
+<div class="caption">
+<span>Themed Celebration</span>
+<p>Custom Character Party Entertainment</p>
+</div>
+</div>
+
+<div class="slide">
+<img src="event5.JPG">
+<div class="caption">
+<span>Premium Birthday Experience</span>
+<p>Games, Energy & Crowd Interaction</p>
+</div>
+</div>
+
+<div class="slide">
+<img src="event6.JPG">
+<div class="caption">
+<span>Family Day Event</span>
+<p>Mascot Fun For Kids & Parents</p>
+</div>
+</div>
+
+<div class="slide">
+<img src="event7.JPG">
+<div class="caption">
+<span>Grand Entrance</span>
+<p>High-Impact Character Reveal & Photo Moments</p>
+</div>
+</div>
+
+<a class="prev" onclick="changeSlide(-1)">❮</a>
+<a class="next" onclick="changeSlide(1)">❯</a>
+
+</div>
 </section>
 
 <footer>
-    © 2026 Premium Concept. All Rights Reserved.
+© 2026 Premium Concept. All Rights Reserved.
 </footer>
 
-<a href="https://wa.me/2348132370407" class="whatsapp">💬</a>
+<a href="https://wa.me/2348132370407" class="whatsapp" target="_blank">💬</a>
 
 <script>
+let slides=document.querySelectorAll(".slide");
+let index=0;
 
-/* Gallery Auto Slide */
-let slides=document.querySelectorAll('.slide');
-let current=0;
+function showSlide(i){
+slides.forEach(slide=>slide.classList.remove("active"));
+slides[i].classList.add("active");
+}
+
+function changeSlide(n){
+index=(index+n+slides.length)%slides.length;
+showSlide(index);
+}
 
 setInterval(()=>{
-    slides[current].classList.remove('active');
-    current=(current+1)%slides.length;
-    slides[current].classList.add('active');
-},4000);
-
-/* Services Slider */
-let services=document.querySelectorAll('.service-slide');
-let serviceIndex=0;
-
-function showService(index){
-    services.forEach(s=>s.classList.remove('active'));
-    services[index].classList.add('active');
-}
-
-function nextService(){
-    serviceIndex=(serviceIndex+1)%services.length;
-    showService(serviceIndex);
-}
-
-function prevService(){
-    serviceIndex=(serviceIndex-1+services.length)%services.length;
-    showService(serviceIndex);
-}
-
+index=(index+1)%slides.length;
+showSlide(index);
+},5000);
 </script>
 
 </body>
