@@ -1,281 +1,256 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Premium Concept | Elevating Excellence</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Concept | Luxury Event Experiences</title>
 
-  <!-- Luxury Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
-      background: black;
-      color: white;
-      overflow-x: hidden;
-      text-align: center;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      background: radial-gradient(circle at center, #111 0%, black 70%);
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: #eee;
+  line-height: 1.7;
+}
 
-    .logo {
-      position: absolute;
-      top: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 22px;
-      font-weight: bold;
-      color: #D4AF37;
-      letter-spacing: 4px;
-    }
+/* NAVIGATION */
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
 
-    h1 {
-      font-size: 60px;
-      color: #D4AF37;
-      margin: 10px 0;
-    }
+nav h1 {
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+  letter-spacing: 3px;
+  font-size: 18px;
+}
 
-    h2 {
-      font-size: 42px;
-      color: #D4AF37;
-    }
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 14px;
+  transition: 0.3s;
+}
 
-    p {
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-      color: #ddd;
-    }
+nav a:hover {
+  color: #d4af37;
+}
 
-    .btn {
-      margin-top: 30px;
-      padding: 15px 40px;
-      background: linear-gradient(45deg, #D4AF37, #FFD700);
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 40px;
-      box-shadow: 0 0 25px rgba(212,175,55,0.8);
-      transition: 0.3s;
-    }
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  background: radial-gradient(circle at center, #111 0%, #000 70%);
+}
 
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 45px rgba(212,175,55,1);
-    }
+.hero-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  background: linear-gradient(45deg,#d4af37,#ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
 
-    section {
-      padding: 100px 20px;
-    }
+.hero-content p {
+  max-width: 700px;
+  margin: auto;
+  color: #bbb;
+  font-size: 18px;
+}
 
-    .divider {
-      width: 120px;
-      height: 2px;
-      background: #D4AF37;
-      margin: 20px auto 60px;
-    }
+.hero-btn {
+  margin-top: 40px;
+  display: inline-block;
+  padding: 14px 40px;
+  background: linear-gradient(45deg,#d4af37,#ffd700);
+  color: #000;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: 500;
+  transition: 0.4s;
+}
 
-    /* FILTER BUTTONS */
-    .filters button {
-      background: transparent;
-      border: 1px solid #D4AF37;
-      color: #D4AF37;
-      padding: 10px 25px;
-      margin: 10px;
-      cursor: pointer;
-      border-radius: 30px;
-      transition: 0.3s;
-    }
+.hero-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(212,175,55,0.3);
+}
 
-    .filters button:hover {
-      background: #D4AF37;
-      color: black;
-    }
+/* SECTION */
+section {
+  padding: 120px 8%;
+  text-align: center;
+}
 
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #d4af37;
+  margin-bottom: 20px;
+}
 
-    .gallery-item {
-      display: none;
-    }
+.section-line {
+  width: 80px;
+  height: 2px;
+  background: #d4af37;
+  margin: 0 auto 60px;
+}
 
-    .gallery-item img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 1px solid #D4AF37;
-      cursor: pointer;
-      transition: 0.4s;
-    }
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 40px;
+}
 
-    .gallery-item img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(212,175,55,0.5);
-    }
+.gallery-item img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: 0.4s;
+}
 
-    .caption {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #ccc;
-    }
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
 
-    /* LIGHTBOX */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-    }
+.caption {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #aaa;
+}
 
-    .lightbox img {
-      max-width: 80%;
-      max-height: 80%;
-    }
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  background: #111;
+  color: #777;
+}
 
-    .lightbox span {
-      position: absolute;
-      top: 30px;
-      right: 50px;
-      font-size: 40px;
-      cursor: pointer;
-      color: white;
-    }
+/* FLOATING WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #25D366;
+  color: white;
+  padding: 15px 18px;
+  border-radius: 50px;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
 
-    footer {
-      padding: 40px;
-      background: #111;
-      color: #aaa;
-    }
-  </style>
+.whatsapp:hover {
+  transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-content h2{
+    font-size:42px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<div class="logo">PREMIUM CONCEPT</div>
-
-<header>
-  <h1>Elevating Excellence</h1>
-  <p>We create unforgettable experiences through premium mascot appearances, corporate activations, and luxury event entertainment.</p>
-  <a href="https://wa.me/2348132370407" class="btn">Book via WhatsApp</a>
-</header>
-
-<section>
-  <h2>Our Events Gallery</h2>
-  <div class="divider"></div>
-
-  <div class="filters">
-    <button onclick="filterSelection('all')">All</button>
-    <button onclick="filterSelection('kids')">Kids Parties</button>
-    <button onclick="filterSelection('corporate')">Corporate</button>
-    <button onclick="filterSelection('special')">Special</button>
+<nav>
+  <h1>PREMIUM CONCEPT</h1>
+  <div>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
   </div>
+</nav>
 
-  <br><br>
+<div class="hero">
+  <div class="hero-content">
+    <h2>Elevating Excellence</h2>
+    <p>
+      We create unforgettable experiences through premium mascot appearances,
+      corporate activations, and luxury event entertainment.
+    </p>
+    <a href="https://wa.me/234XXXXXXXXXX" class="hero-btn">Book Now</a>
+  </div>
+</div>
+
+<section id="gallery">
+  <h3>Our Events</h3>
+  <div class="section-line"></div>
 
   <div class="gallery">
-
-    <div class="gallery-item kids">
-      <img src="images/event1.jpg" onclick="openLightbox(this.src)">
-      <div class="caption">Event 1 – Kids Birthday Party</div>
+    <div class="gallery-item">
+      <img src="Event 1 .JPG">
+      <div class="caption">Kids Birthday Party</div>
     </div>
 
-    <div class="gallery-item kids">
-      <img src="images/event2.jpg" onclick="openLightbox(this.src)">
-      <div class="caption">Event 2 – Cartoon Mascot Appearance</div>
+    <div class="gallery-item">
+      <img src="Event 2 .JPG">
+      <div class="caption">Cartoon Mascot Appearance</div>
     </div>
 
-    <div class="gallery-item corporate">
-      <img src="images/event3.jpg" onclick="openLightbox(this.src)">
-      <div class="caption">Event 3 – Corporate Brand Activation</div>
+    <div class="gallery-item">
+      <img src="Event 3 .JPG">
+      <div class="caption">Corporate Brand Activation</div>
     </div>
 
-    <div class="gallery-item corporate">
-      <img src="images/event4.jpg" onclick="openLightbox(this.src)">
-      <div class="caption">Event 4 – Company Anniversary</div>
+    <div class="gallery-item">
+      <img src="Event 4 .JPG">
+      <div class="caption">Company Anniversary</div>
     </div>
 
-    <div class="gallery-item special">
-      <img src="images/event5.jpg" onclick="openLightbox(this.src)">
-      <div class="caption">Event 5 – Custom Themed Appearance</div>
+    <div class="gallery-item">
+      <img src="Event 5.JPG">
+      <div class="caption">Custom Themed Event</div>
     </div>
 
-    <div class="gallery-item special">
-      <img src="images/event6.jpg" onclick="openLightbox(this.src)">
-      <div class="caption">Event 6 – Private VIP Event</div>
+    <div class="gallery-item">
+      <img src="Event 6.JPG">
+      <div class="caption">VIP Private Event</div>
     </div>
 
-    <div class="gallery-item kids">
-      <img src="images/event7.jpg" onclick="openLightbox(this.src)">
-      <div class="caption">Event 7 – School Fun Day</div>
+    <div class="gallery-item">
+      <img src="Event 7.JPG">
+      <div class="caption">School Fun Day</div>
     </div>
-
   </div>
 </section>
 
-<footer>
-  © 2025 Premium Concept | All Rights Reserved
+<footer id="contact">
+  © 2026 Premium Concept | All Rights Reserved
 </footer>
 
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox">
-  <span onclick="closeLightbox()">&times;</span>
-  <img id="lightbox-img">
-</div>
-
-<script>
-filterSelection("all")
-
-function filterSelection(c) {
-  var x = document.getElementsByClassName("gallery-item");
-  if (c == "all") c = "";
-  for (var i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-    if (x[i].className.indexOf(c) > -1) {
-      x[i].style.display = "block";
-    }
-  }
-}
-
-function openLightbox(src) {
-  document.getElementById("lightbox-img").src = src;
-  document.getElementById("lightbox").style.display = "block";
-}
-
-function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
-}
-</script>
+<a href="https://wa.me/2348132370407" class="whatsapp">WhatsApp</a>
 
 </body>
 </html>
-
       
-   
-   
-
-
-
 
 
 
