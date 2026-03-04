@@ -6,25 +6,54 @@
 <title>Premium Concept | Elevating Excellence</title>
 
 <style>
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom, #000000, #0f0f0f);
+    background: black;
     color: white;
-    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* ===== Watermark Text ===== */
+body::before {
+    content: "PREMIUM CONCEPT  •  ELEVATING EXCELLENCE";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    font-size: 60px;
+    color: gold;
+    opacity: 0.03;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ===== Logo Watermark ===== */
+body::after {
+    content: "";
+    position: fixed;
+    top: 20%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: url('logo.PNG') no-repeat center;
+    background-size: contain;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
 }
 
 section {
-    padding: 90px 20px;
+    position: relative;
+    z-index: 1;
+    padding: 100px 20px;
     text-align: center;
 }
 
-h1, h2, h3 {
-    letter-spacing: 2px;
-}
-
 h1 {
-    font-size: 48px;
+    font-size: 50px;
     color: gold;
     margin-bottom: 10px;
 }
@@ -34,29 +63,23 @@ h2 {
     color: gold;
 }
 
+.tagline {
+    letter-spacing: 5px;
+    color: #d4af37;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 220px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px gold);
+}
+
 p {
     max-width: 800px;
     margin: auto;
     line-height: 1.8;
     opacity: 0.85;
-}
-
-.logo {
-    width: 220px;
-    margin-bottom: 25px;
-    filter: drop-shadow(0 0 15px gold);
-    animation: fadeIn 2s ease-in-out;
-}
-
-.hero {
-    padding-top: 120px;
-}
-
-.tagline {
-    font-size: 18px;
-    letter-spacing: 4px;
-    color: #d4af37;
-    margin-bottom: 30px;
 }
 
 .btn {
@@ -73,14 +96,15 @@ p {
 
 .btn:hover {
     background: #d4af37;
-    box-shadow: 0 0 25px gold;
+    box-shadow: 0 0 30px gold;
     transform: scale(1.05);
 }
 
+/* ===== Services ===== */
 .services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 35px;
+    gap: 30px;
     margin-top: 50px;
 }
 
@@ -88,149 +112,173 @@ p {
     background: #111;
     padding: 35px;
     border-radius: 15px;
-    transition: 0.3s ease;
     border: 1px solid #222;
+    transition: 0.3s ease;
 }
 
 .service-box:hover {
-    transform: translateY(-10px);
     border-color: gold;
     box-shadow: 0 0 20px rgba(255,215,0,0.4);
+    transform: translateY(-10px);
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+/* ===== Slideshow ===== */
+.slideshow-container {
+    position: relative;
+    max-width: 900px;
+    margin: 60px auto 0 auto;
 }
 
-.gallery-item {
-    background: #111;
-    padding: 15px;
-    border-radius: 12px;
-    transition: 0.3s ease;
+.slide {
+    display: none;
 }
 
-.gallery-item img {
+.slide img {
     width: 100%;
-    border-radius: 10px;
-    transition: 0.4s ease;
+    border-radius: 15px;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.08);
+.fade {
+    animation: fade 1.5s;
 }
 
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: gold;
+    font-weight: bold;
+    font-size: 22px;
+    transition: 0.3s ease;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    color: white;
+}
+
+/* Footer */
 footer {
-    padding: 40px 20px;
+    padding: 40px;
     background: black;
-    text-align: center;
-    font-size: 14px;
     opacity: 0.6;
+    font-size: 14px;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(-20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
 </style>
 </head>
 
 <body>
 
-<section class="hero">
-    <img src="logo.PNG" alt="Premium Concept Logo" class="logo">
-
+<section>
+    <img src="logo.PNG" class="logo">
     <h1>PREMIUM CONCEPT</h1>
     <div class="tagline">ELEVATING EXCELLENCE</div>
-
     <p>
         Lagos’ premium mascot and entertainment brand delivering unforgettable,
-        high-energy, luxury event experiences for birthdays, schools, and corporate activations.
+        luxury event experiences tailored for birthdays, schools, and corporate activations.
     </p>
-
     <a href="https://wa.me/2348132370407" class="btn">Book Now on WhatsApp</a>
 </section>
 
 <section>
     <h2>Our Premium Services</h2>
-    <p>
-        We create world-class entertainment experiences tailored to your vision.
-        Our services are flexible and fully customizable to ensure maximum satisfaction.
-    </p>
+    <p>We create high-end entertainment experiences customized to exceed expectations.</p>
 
     <div class="services">
         <div class="service-box">
-            <h3>🎭 Mascot Entertainment</h3>
-            <p>Premium character performances designed to energize and excite every audience.</p>
+            <h3>Mascot Entertainment</h3>
+            <p>High-energy character performances for unforgettable moments.</p>
         </div>
-
         <div class="service-box">
-            <h3>🎉 Luxury Birthday Experiences</h3>
-            <p>Memorable celebrations crafted with elegance, creativity and professionalism.</p>
+            <h3>Luxury Birthday Experiences</h3>
+            <p>Magical celebrations crafted with elegance and excellence.</p>
         </div>
-
         <div class="service-box">
-            <h3>🏢 Corporate Activations</h3>
-            <p>Engaging brand-focused entertainment that elevates your company presence.</p>
+            <h3>Corporate Activations</h3>
+            <p>Brand-driven event engagement that elevates visibility.</p>
         </div>
-
         <div class="service-box">
-            <h3>🎪 Themed Event Experiences</h3>
-            <p>Customized event concepts designed to align perfectly with your celebration goals.</p>
+            <h3>Themed Event Experiences</h3>
+            <p>Customized concepts tailored to your celebration goals.</p>
         </div>
     </div>
 </section>
 
 <section>
-    <h2>Event Gallery</h2>
-    <p>A glimpse into our premium experiences and unforgettable moments.</p>
+    <h2>Event Showcase</h2>
 
-    <div class="gallery">
+    <div class="slideshow-container">
 
-        <div class="gallery-item">
+        <div class="slide fade">
             <img src="Event 1 .JPG">
-            <p><strong>Event 1:</strong> Luxury Birthday Celebration.</p>
         </div>
 
-        <div class="gallery-item">
+        <div class="slide fade">
             <img src="Event 2 .JPG">
-            <p><strong>Event 2:</strong> School Event Activation.</p>
         </div>
 
-        <div class="gallery-item">
+        <div class="slide fade">
             <img src="Event 3 .JPG">
-            <p><strong>Event 3:</strong> Premium Kids Party Performance.</p>
         </div>
 
-        <div class="gallery-item">
+        <div class="slide fade">
             <img src="Event 4 .JPG">
-            <p><strong>Event 4:</strong> Branded Entertainment Showcase.</p>
         </div>
 
-        <div class="gallery-item">
+        <div class="slide fade">
             <img src="Event 5.JPG">
-            <p><strong>Event 5:</strong> Corporate Engagement Activation.</p>
         </div>
 
-        <div class="gallery-item">
+        <div class="slide fade">
             <img src="Event 6.JPG">
-            <p><strong>Event 6:</strong> Themed Celebration Experience.</p>
         </div>
 
-        <div class="gallery-item">
+        <div class="slide fade">
             <img src="Event 7.JPG">
-            <p><strong>Event 7:</strong> Premium Performance Showcase.</p>
         </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
 
     </div>
 </section>
 
 <footer>
-    © 2026 Premium Concept | Elevating Excellence
+© 2026 Premium Concept | Elevating Excellence
 </footer>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 4000);
+}
+
+function plusSlides(n) {
+    slideIndex += n-1;
+    showSlides();
+}
+</script>
 
 </body>
 </html>
-
