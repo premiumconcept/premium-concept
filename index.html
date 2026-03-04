@@ -28,12 +28,12 @@ padding:70px 20px 40px;
 }
 
 .logo{
-width:300px;  /* Increased logo size */
-margin-bottom:20px;
+width:320px;
+margin-bottom:15px;
 }
 
 .tagline{
-font-size:13px;
+font-size:12px;
 letter-spacing:4px;
 color:#D4AF37;
 text-transform:uppercase;
@@ -129,22 +129,23 @@ position:relative;
 .slide img{
 width:100%;
 border-radius:10px;
+display:block;
 }
 
+/* CINEMATIC CAPTION */
 .caption{
 position:absolute;
-bottom:30px;
-left:50%;
-transform:translateX(-50%);
-background:rgba(0,0,0,0.75);
-padding:18px 30px;
-border-radius:8px;
+bottom:0;
+left:0;
+width:100%;
+padding:50px 20px 20px;
 text-align:center;
+background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
 }
 
 .caption span{
 display:block;
-font-size:12px;
+font-size:11px;
 letter-spacing:2px;
 color:#D4AF37;
 margin-bottom:6px;
@@ -153,6 +154,8 @@ text-transform:uppercase;
 
 .caption p{
 font-size:14px;
+max-width:80%;
+margin:auto;
 }
 
 /* ARROWS */
@@ -176,23 +179,35 @@ background:#D4AF37;
 color:#000;
 }
 
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-width:65px;
-height:65px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
+/* CALL TO ACTION SECTION */
+.cta{
+padding:100px 20px;
+text-align:center;
+background:#0a0a0a;
+}
+
+.cta h2{
+font-family:'Playfair Display',serif;
 font-size:30px;
+margin-bottom:40px;
+}
+
+.cta-btn{
+display:inline-block;
+padding:18px 45px;
+background:#25D366;
 color:#fff;
 text-decoration:none;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
-z-index:1000;
+border-radius:50px;
+font-size:14px;
+letter-spacing:2px;
+text-transform:uppercase;
+transition:0.3s ease;
+}
+
+.cta-btn:hover{
+background:#1ebe5d;
+transform:scale(1.05);
 }
 
 /* FOOTER */
@@ -308,11 +323,16 @@ opacity:0.8;
 </div>
 </section>
 
+<section class="cta">
+<h2>Ready To Create An Unforgettable Experience?</h2>
+<a href="https://wa.me/2348132370407?text=Hello%20Premium%20Concept,%20I%20would%20like%20to%20make%20an%20enquiry.%20Please%20share%20available%20packages,%20pricing,%20and%20availability." target="_blank" class="cta-btn">
+BOOK US NOW
+</a>
+</section>
+
 <footer>
 © 2026 Premium Concept. All Rights Reserved.
 </footer>
-
-<a href="https://wa.me/2348132370407" class="whatsapp" target="_blank">💬</a>
 
 <script>
 let slides=document.querySelectorAll(".slide");
