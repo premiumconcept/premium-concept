@@ -5,251 +5,232 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Concept</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+/* ================= GLOBAL ================= */
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background-color: #000;
+    color: #fff;
 }
 
-body{
-    font-family:'Poppins', sans-serif;
-    background:#000;
-    color:#fff;
-    overflow-x:hidden;
+a {
+    text-decoration: none;
 }
 
-/* NAV */
-nav{
-    position:fixed;
-    width:100%;
-    padding:20px 10%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(0,0,0,0.9);
-    z-index:1000;
+/* ================= NAVBAR ================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
 }
 
-nav img{
-    height:60px;
+.logo {
+    height: 100px;   /* Enlarged logo */
 }
 
-nav a{
-    color:#d4af37;
-    text-decoration:none;
-    font-weight:500;
+.nav-btn {
+    color: #d4af37;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 18px;
 }
 
-/* HERO */
-.hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:0 20px;
+/* Mobile logo size */
+@media (max-width: 768px) {
+    .logo {
+        height: 70px;
+    }
 }
 
-.hero h1{
-    font-family:'Playfair Display', serif;
-    font-size:60px;
-    background:linear-gradient(90deg,#d4af37,#f8e9a1,#d4af37);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    letter-spacing:2px;
+/* ================= HERO ================= */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
 }
 
-.hero p{
-    margin-top:20px;
-    font-size:18px;
-    color:#ccc;
+.hero h1 {
+    font-size: 36px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    color: #d4af37;
 }
 
-.hero button{
-    margin-top:40px;
-    padding:15px 40px;
-    border:none;
-    background:#d4af37;
-    color:#000;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px;
+    }
 }
 
-.hero button:hover{
-    background:#fff;
+/* ================= BUTTON ================= */
+.btn {
+    background-color: #d4af37;
+    color: #000;
+    padding: 18px 40px;
+    display: inline-block;
+    margin-top: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 16px;
 }
 
-/* SERVICES */
-.services{
-    padding:100px 10%;
-    text-align:center;
+/* ================= SERVICES ================= */
+.services {
+    text-align: center;
+    padding: 80px 20px;
 }
 
-.services h2{
-    font-family:'Playfair Display', serif;
-    font-size:40px;
-    color:#d4af37;
-    margin-bottom:40px;
+.services-title {
+    font-size: 38px;
+    color: #d4af37;
+    margin-bottom: 50px;
 }
 
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+.service-box {
+    border: 1px solid #333;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 600px;
+    font-size: 20px;
 }
 
-.service-card{
-    background:#111;
-    padding:30px;
-    border:1px solid #222;
-    transition:0.3s;
+/* ================= SLIDESHOW ================= */
+.slideshow-container {
+    max-width: 900px;
+    margin: 80px auto;
+    position: relative;
 }
 
-.service-card:hover{
-    border:1px solid #d4af37;
-    transform:translateY(-5px);
+.slide {
+    display: none;
+    text-align: center;
+    animation: fade 1s ease-in-out;
 }
 
-/* GALLERY */
-.gallery{
-    padding:100px 0;
-    text-align:center;
+.slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
 }
 
-.gallery h2{
-    font-family:'Playfair Display', serif;
-    font-size:40px;
-    color:#d4af37;
-    margin-bottom:40px;
+.image-caption {
+    font-size: 18px;
+    color: #d4af37;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.slider{
-    position:relative;
-    width:100%;
-    height:500px;
-    overflow:hidden;
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
 }
 
-.slide{
-    position:absolute;
-    width:100%;
-    height:100%;
-    opacity:0;
-    transition:opacity 1s ease-in-out;
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: grey;
+    font-size: 14px;
 }
 
-.slide img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.active{
-    opacity:1;
-}
-
-/* CONTACT */
-.contact{
-    padding:100px 10%;
-    text-align:center;
-}
-
-.contact h2{
-    font-family:'Playfair Display', serif;
-    font-size:40px;
-    color:#d4af37;
-    margin-bottom:20px;
-}
-
-.contact button{
-    padding:15px 40px;
-    border:none;
-    background:#d4af37;
-    color:#000;
-    font-weight:600;
-    cursor:pointer;
-}
-
-footer{
-    text-align:center;
-    padding:40px 0;
-    background:#111;
-    color:#777;
-}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-    <img src="logo.svg" alt="Premium Concept Logo">
-    <a href="#contact">BOOK US</a>
-</nav>
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+    <img src="logo.svg" class="logo" alt="Premium Concept Logo">
+    <a class="nav-btn" href="https://wa.me/2348132370407" target="_blank">BOOK US</a>
+</div>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="hero">
-    <h1>Where Premium Meets Fun</h1>
-    <p>Luxury event experiences crafted with elegance, energy and unforgettable moments.</p>
-    <button onclick="bookNow()">BOOK US NOW</button>
+    <h1>
+        Let’s Create<br>
+        Something<br>
+        Premium
+    </h1>
+
+    <a class="btn"
+    href="https://wa.me/2348132370407?text=Hello%20Premium%20Concept,%0A%0AI%20would%20like%20to%20make%20an%20enquiry.%0A%0AEvent%20Type:%20__________%0AEvent%20Date:%20__________%0ALocation:%20__________%0ANumber%20of%20Guests:%20__________%0ABudget%20Range:%20__________%0A%0APlease%20provide%20more%20details.%20Thank%20you."
+    target="_blank">
+    BOOK US NOW
+    </a>
 </section>
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
 <section class="services">
-    <h2>Services Rendered</h2>
-    <div class="service-grid">
-        <div class="service-card">Luxury Birthday Celebrations</div>
-        <div class="service-card">Corporate Events</div>
-        <div class="service-card">Wedding After-Parties</div>
-        <div class="service-card">Private VIP Events</div>
-        <div class="service-card">Outdoor Event Setup</div>
-        <div class="service-card">Premium Decorations & Styling</div>
+    <h2 class="services-title">Our Services</h2>
+
+    <div class="service-box">Luxury Birthday Celebrations</div>
+    <div class="service-box">Corporate Events</div>
+    <div class="service-box">Wedding After-Parties</div>
+    <div class="service-box">Private VIP Events</div>
+    <div class="service-box">Full Event Styling & Decoration</div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="slideshow-container">
+
+    <div class="slide">
+        <img src="event1.JPG" alt="Luxury Birthday Celebration">
+        <p class="image-caption">Luxury Birthday Celebrations</p>
     </div>
-</section>
 
-<!-- GALLERY -->
-<section class="gallery">
-    <h2>Event Gallery</h2>
-    <div class="slider">
-        <div class="slide active"><img src="event1.JPG"></div>
-        <div class="slide"><img src="event2.JPG"></div>
-        <div class="slide"><img src="event3.JPG"></div>
-        <div class="slide"><img src="event4.JPG"></div>
-        <div class="slide"><img src="event5.JPG"></div>
-        <div class="slide"><img src="event6.JPG"></div>
-        <div class="slide"><img src="event7.JPG"></div>
+    <div class="slide">
+        <img src="event2.JPG" alt="Corporate Event">
+        <p class="image-caption">Corporate Events</p>
     </div>
+
+    <div class="slide">
+        <img src="event3.JPG" alt="Wedding After Party">
+        <p class="image-caption">Wedding After-Parties</p>
+    </div>
+
+    <div class="slide">
+        <img src="event4.JPG" alt="Private VIP Event">
+        <p class="image-caption">Private VIP Events</p>
+    </div>
+
+    <div class="slide">
+        <img src="event5.JPG" alt="Event Decoration">
+        <p class="image-caption">Full Event Styling & Decoration</p>
+    </div>
+
+    <div class="slide">
+        <img src="event6.JPG" alt="Luxury Setup">
+        <p class="image-caption">Luxury Event Setup</p>
+    </div>
+
+    <div class="slide">
+        <img src="event7.JPG" alt="Premium Experience">
+        <p class="image-caption">Premium Experience</p>
+    </div>
+
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-    <h2>Let’s Create Something Premium</h2>
-    <button onclick="bookNow()">BOOK US NOW</button>
-</section>
-
+<!-- ================= FOOTER ================= -->
 <footer>
     © 2026 Premium Concept. All Rights Reserved.
 </footer>
 
+<!-- ================= SLIDESHOW SCRIPT ================= -->
 <script>
-let slides = document.querySelectorAll('.slide');
-let index = 0;
+let slideIndex = 0;
+showSlides();
 
-setInterval(()=>{
-    slides[index].classList.remove('active');
-    index = (index + 1) % slides.length;
-    slides[index].classList.add('active');
-},4000);
-
-function bookNow(){
-    let message = encodeURIComponent(
-        "Hello Premium Concept,%0A%0AI would like to book an event.%0A%0AEvent Type:%0AEvent Date:%0ALocation:%0ABudget Range:%0AAdditional Details:"
-    );
-    window.open("https://wa.me/2348132370407?text=" + message, "_blank");
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 4000);
 }
 </script>
 
