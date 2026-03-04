@@ -32,14 +32,12 @@ body {
     padding: 60px 20px;
 }
 
-/* 🔥 MUCH BIGGER LOGO */
 .logo {
     width: 320px;
     height: auto;
     margin-bottom: 30px;
 }
 
-/* Smaller heading (balanced under big logo) */
 .hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: 36px;
@@ -117,19 +115,38 @@ body {
 }
 
 .slideshow {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     position: relative;
 }
 
-.slideshow img {
+.slide {
+    position: absolute;
     width: 100%;
-    border-radius: 10px;
-    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-.slideshow img.active {
-    display: block;
+.slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.6);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #E5C76B;
 }
 
 /* ================= FOOTER ================= */
@@ -201,9 +218,42 @@ footer {
     <h2>Event Highlights</h2>
 
     <div class="slideshow">
-        <img src="gallery1.jpg" class="active">
-        <img src="gallery2.jpg">
-        <img src="gallery3.jpg">
+
+        <div class="slide active">
+            <img src="event1.JPG">
+            <p class="caption">Kids Birthday Celebration</p>
+        </div>
+
+        <div class="slide">
+            <img src="event2.JPG">
+            <p class="caption">Corporate Brand Activation</p>
+        </div>
+
+        <div class="slide">
+            <img src="event3.JPG">
+            <p class="caption">School Fun Day Event</p>
+        </div>
+
+        <div class="slide">
+            <img src="event4.JPG">
+            <p class="caption">Character Meet & Greet</p>
+        </div>
+
+        <div class="slide">
+            <img src="event5.JPG">
+            <p class="caption">Luxury Kids Party Experience</p>
+        </div>
+
+        <div class="slide">
+            <img src="event6.JPG">
+            <p class="caption">Corporate Family Day</p>
+        </div>
+
+        <div class="slide">
+            <img src="event7.JPG">
+            <p class="caption">Custom Themed Celebration</p>
+        </div>
+
     </div>
 </section>
 
@@ -212,14 +262,14 @@ footer {
 </footer>
 
 <script>
-let slides = document.querySelectorAll('.slideshow img');
+let slides = document.querySelectorAll('.slide');
 let current = 0;
 
 setInterval(() => {
     slides[current].classList.remove('active');
     current = (current + 1) % slides.length;
     slides[current].classList.add('active');
-}, 3000);
+}, 4000);
 </script>
 
 </body>
