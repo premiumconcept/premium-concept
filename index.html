@@ -5,126 +5,194 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Concept</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: white;
-    text-align: center;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: white;
+  text-align: center;
 }
 
-/* LOGO */
+/* HEADER */
+.header {
+  padding: 40px 20px 20px;
+}
+
 .logo {
-    width: 320px;
-    margin-top: 20px;
+  width: 160px; /* Increased again */
+  margin-bottom: 10px;
+}
+
+.brand-title {
+  font-size: 40px;
+  letter-spacing: 6px;
+  font-weight: 500;
+}
+
+.brand-sub {
+  color: #d4af37;
+  letter-spacing: 4px;
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 /* TAGLINE */
 .tagline {
-    font-size: 16px;
-    margin-top: 5px;
-    opacity: 0.75;
+  font-size: 24px;
+  letter-spacing: 4px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: linear-gradient(90deg, #d4af37, #ffffff, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 3s ease-in-out infinite alternate;
 }
 
-/* SLIDER */
-.slider {
-    position: relative;
-    max-width: 100%;
-    height: 500px;
-    margin-top: 30px;
-    overflow: hidden;
+.tagline .line {
+  width: 60px;
+  height: 1px;
+  background: #d4af37;
 }
 
-.slides {
-    display: flex;
-    width: 700%;
-    animation: slide 35s infinite;
+@keyframes glow {
+  from { text-shadow: 0 0 5px rgba(212,175,55,0.4); }
+  to { text-shadow: 0 0 15px rgba(212,175,55,0.9); }
 }
 
-.slides img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
+/* DESCRIPTION */
+.description {
+  max-width: 700px;
+  margin: 20px auto;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #ccc;
 }
 
-/* CAPTION */
-.caption {
-    position: absolute;
-    bottom: 15px;
-    left: 0;
-    width: 100%;
-    font-size: 18px;
-    font-weight: bold;
-    background: rgba(0,0,0,0.3);
-    padding: 8px 0;
+/* BUTTON */
+.cta-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 35px;
+  background: linear-gradient(45deg, #d4af37, #b8902e);
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
-/* CTA BUTTON */
-.cta-btn {
-    display: inline-block;
-    margin: 40px 0;
-    padding: 16px 40px;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 40px;
-    font-size: 18px;
-    transition: 0.3s ease;
+.cta-button:hover {
+  transform: scale(1.05);
 }
 
-.cta-btn:hover {
-    background: #1ebe5d;
+/* SERVICES */
+.services {
+  margin-top: 80px;
+  padding: 40px 20px;
 }
 
-/* AUTO SLIDE */
-@keyframes slide {
-    0% {margin-left: 0%;}
-    12% {margin-left: 0%;}
-    14% {margin-left: -100%;}
-    26% {margin-left: -100%;}
-    28% {margin-left: -200%;}
-    40% {margin-left: -200%;}
-    42% {margin-left: -300%;}
-    54% {margin-left: -300%;}
-    56% {margin-left: -400%;}
-    68% {margin-left: -400%;}
-    70% {margin-left: -500%;}
-    82% {margin-left: -500%;}
-    84% {margin-left: -600%;}
-    96% {margin-left: -600%;}
-    100% {margin-left: 0%;}
+.services h2 {
+  font-size: 28px;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+}
+
+.service-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-box {
+  width: 280px;
+  padding: 30px 20px;
+  border: 1px solid #d4af37;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.service-box:hover {
+  box-shadow: 0 0 20px rgba(212,175,55,0.6);
+}
+
+.service-box h3 {
+  color: #d4af37;
+  margin-bottom: 15px;
+}
+
+/* WHY SECTION */
+.why {
+  margin-top: 80px;
+  padding: 40px 20px;
+}
+
+.why h2 {
+  font-size: 28px;
+  letter-spacing: 4px;
+}
+
+.why p {
+  max-width: 700px;
+  margin: 20px auto;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 80px;
+  padding: 20px;
+  font-size: 14px;
+  color: #888;
 }
 </style>
 </head>
 
 <body>
 
-<img src="logo.svg" alt="Premium Concept Logo" class="logo">
-
-<div class="tagline">Where Premium Meets Fun</div>
-
-<div class="slider">
-    <div class="slides">
-        <img src="event1.JPG" alt="Event 1">
-        <img src="event2.JPG" alt="Event 2">
-        <img src="event3.JPG" alt="Event 3">
-        <img src="event4.JPG" alt="Event 4">
-        <img src="event5.JPG" alt="Event 5">
-        <img src="event6.JPG" alt="Event 6">
-        <img src="event7.JPG" alt="Event 7">
-    </div>
-
-    <div class="caption">
-        Premium Mascots | Labubu | Birthdays | Corporate | School Events | Brand Activations
-    </div>
+<div class="header">
+  <img src="logo.png" alt="Premium Concept Logo" class="logo">
+  <div class="brand-title">PREMIUM CONCEPT</div>
+  <div class="brand-sub">ELEVATING EXCELLENCE</div>
 </div>
 
-<a href="https://wa.me/2348132370407?text=Hello%20Premium%20Concept,%0A%0AI%20would%20like%20to%20make%20an%20enquiry.%20Kindly%20share:%0A%0A1.%20Available%20mascot%20or%20entertainment%20packages%0A2.%20Pricing%20details%0A3.%20Availability%20for%20my%20event%20date%0A4.%20Any%20additional%20service%20options%20(Labubu,%20brand%20activations,%20corporate,%20etc.)%0A%0AThank%20you." 
-target="_blank" class="cta-btn">
+<h2 class="tagline">
+  <span class="line"></span>
+  Where Premium Meets Fun
+  <span class="line"></span>
+</h2>
+
+<p class="description">
+Lagos’ premium mascot & costume entertainment brand for kids and corporate events.
+We create unforgettable memories with class, excellence, and energy.
+</p>
+
+<a class="cta-button" 
+href="https://wa.me/2348132370407?text=Hello%20Premium%20Concept,%20I%20would%20like%20to%20book%20a%20service.%0A%0AEvent%20Type:%20%0ADate:%20%0ALocation:%20%0ASpecific%20Service%20(Mascot/Labobo/Others):%20">
 BOOK US NOW
 </a>
 
-</body>
-</html>
+<section class="services">
+  <h2>Our Services</h2>
+  <div class="service-container">
+
+    <div class="service-box">
+      <h3>Kids Parties</h3>
+      <p>Fun-filled mascot appearances that bring joy, laughter, and unforgettable memories.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>Corporate Events</h3>
+      <p>Premium entertainment experiences that elevate brand engagement and audience excitement.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>Special Appearances</h3>
+      <p>Custom-themed mascot performances tailored to your
