@@ -5,354 +5,129 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Concept</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
 }
 
-body{
-font-family:'Poppins',sans-serif;
-background:#000;
-color:#fff;
-overflow-x:hidden;
+/* LOGO */
+.logo {
+    width: 320px;   /* Bigger logo */
+    margin-top: 20px;
 }
 
-/* HEADER */
-header{
-text-align:center;
-padding:70px 20px 40px;
+/* TAGLINE */
+.tagline {
+    font-size: 16px;   /* Smaller tagline */
+    margin-top: 5px;
+    opacity: 0.75;
 }
 
-.logo{
-width:320px;
-margin-bottom:15px;
+/* SLIDER */
+.slider {
+    position: relative;
+    max-width: 100%;
+    height: 500px;
+    margin-top: 30px;
+    overflow: hidden;
 }
 
-.tagline{
-font-size:12px;
-letter-spacing:4px;
-color:#D4AF37;
-text-transform:uppercase;
+.slides {
+    display: flex;
+    width: 700%;
+    animation: slide 35s infinite;
 }
 
-/* HERO */
-.hero{
-text-align:center;
-padding:60px 20px;
-max-width:900px;
-margin:auto;
+.slides img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
 }
 
-.hero h1{
-font-family:'Playfair Display',serif;
-font-size:42px;
-margin-bottom:20px;
+/* CAPTION */
+.caption {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(0,0,0,0.3); /* lighter so it doesn't block images */
+    padding: 8px 0;
 }
 
-.hero p{
-opacity:0.85;
-font-size:16px;
+/* CTA BUTTON */
+.cta-btn {
+    display: inline-block;
+    margin: 40px 0;
+    padding: 16px 40px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 40px;
+    font-size: 18px;
+    transition: 0.3s ease;
 }
 
-/* SERVICES */
-.services{
-padding:80px 20px;
-text-align:center;
+.cta-btn:hover {
+    background: #1ebe5d;
 }
 
-.services h2{
-font-family:'Playfair Display',serif;
-margin-bottom:50px;
-font-size:32px;
-}
-
-.service-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-max-width:1100px;
-margin:auto;
-}
-
-.service-box{
-border:1px solid #222;
-padding:35px 25px;
-transition:0.4s ease;
-background:#0a0a0a;
-}
-
-.service-box:hover{
-border-color:#D4AF37;
-transform:translateY(-6px);
-}
-
-.service-box h3{
-color:#D4AF37;
-margin-bottom:15px;
-}
-
-/* GALLERY */
-.gallery{
-padding:90px 20px;
-text-align:center;
-}
-
-.gallery h2{
-font-family:'Playfair Display',serif;
-margin-bottom:50px;
-font-size:32px;
-}
-
-.slideshow{
-position:relative;
-max-width:950px;
-margin:auto;
-overflow:hidden;
-}
-
-.slide{
-position:absolute;
-width:100%;
-opacity:0;
-transition:opacity 1s ease-in-out;
-}
-
-.slide.active{
-opacity:1;
-position:relative;
-}
-
-.slide img{
-width:100%;
-border-radius:10px;
-display:block;
-}
-
-/* CINEMATIC CAPTION */
-.caption{
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-padding:50px 20px 20px;
-text-align:center;
-background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
-}
-
-.caption span{
-display:block;
-font-size:11px;
-letter-spacing:2px;
-color:#D4AF37;
-margin-bottom:6px;
-text-transform:uppercase;
-}
-
-.caption p{
-font-size:14px;
-max-width:80%;
-margin:auto;
-}
-
-/* ARROWS */
-.prev,.next{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-font-size:28px;
-background:rgba(0,0,0,0.6);
-padding:10px 18px;
-cursor:pointer;
-color:#fff;
-border-radius:4px;
-}
-
-.prev{left:15px;}
-.next{right:15px;}
-
-.prev:hover,.next:hover{
-background:#D4AF37;
-color:#000;
-}
-
-/* CALL TO ACTION SECTION */
-.cta{
-padding:100px 20px;
-text-align:center;
-background:#0a0a0a;
-}
-
-.cta h2{
-font-family:'Playfair Display',serif;
-font-size:30px;
-margin-bottom:40px;
-}
-
-.cta-btn{
-display:inline-block;
-padding:18px 45px;
-background:#25D366;
-color:#fff;
-text-decoration:none;
-border-radius:50px;
-font-size:14px;
-letter-spacing:2px;
-text-transform:uppercase;
-transition:0.3s ease;
-}
-
-.cta-btn:hover{
-background:#1ebe5d;
-transform:scale(1.05);
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:40px 20px;
-border-top:1px solid #111;
-margin-top:80px;
-font-size:14px;
-opacity:0.8;
+/* AUTO SLIDE ANIMATION */
+@keyframes slide {
+    0% {margin-left: 0%;}
+    12% {margin-left: 0%;}
+    14% {margin-left: -100%;}
+    26% {margin-left: -100%;}
+    28% {margin-left: -200%;}
+    40% {margin-left: -200%;}
+    42% {margin-left: -300%;}
+    54% {margin-left: -300%;}
+    56% {margin-left: -400%;}
+    68% {margin-left: -400%;}
+    70% {margin-left: -500%;}
+    82% {margin-left: -500%;}
+    84% {margin-left: -600%;}
+    96% {margin-left: -600%;}
+    100% {margin-left: 0%;}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<img src="logo.svg" class="logo">
+<!-- LOGO -->
+<img src="logo.svg" alt="Premium Concept Logo" class="logo">
+
+<!-- TAGLINE -->
 <div class="tagline">Where Premium Meets Fun</div>
-</header>
 
-<section class="hero">
-<h1>Luxury Mascot & Event Entertainment</h1>
-<p>We create unforgettable mascot experiences for birthdays, corporate activations and themed celebrations.</p>
-</section>
-
-<section class="services">
-<h2>Our Services</h2>
-<div class="service-grid">
-
-<div class="service-box">
-<h3>Kids Birthday Packages</h3>
-<p>Live mascot dance, interactive games and full crowd engagement.</p>
-</div>
-
-<div class="service-box">
-<h3>Corporate Events</h3>
-<p>Professional brand activation mascots and promotional character appearances.</p>
+<!-- SLIDER -->
+<div class="slider">
+    <div class="slides">
+        <img src="image1.jpg" alt="Mascot Performance">
+        <img src="image2.jpg" alt="Labubu Experience">
+        <img src="image3.jpg" alt="Birthday Mascot Party">
+        <img src="image4.jpg" alt="Corporate Event Mascot">
+        <img src="image5.jpg" alt="School Event Entertainment">
+        <img src="image6.jpg" alt="Brand Activation">
+        <img src="image7.jpg" alt="Children Event Fun">
+    </div>
+    <div class="caption">
+        Premium Mascots | Labubu | Birthdays | Corporate | School Events | Brand Activations
+    </div>
 </div>
 
-<div class="service-box">
-<h3>Custom Character Booking</h3>
-<p>Themed costumes tailored to elevate your event experience.</p>
-</div>
-
-</div>
-</section>
-
-<section class="gallery">
-<h2>Event Highlights</h2>
-
-<div class="slideshow">
-
-<div class="slide active">
-<img src="event1.JPG">
-<div class="caption">
-<span>Kids Birthday Package</span>
-<p>High Energy Mascot Dance Performance</p>
-</div>
-</div>
-
-<div class="slide">
-<img src="event2.JPG">
-<div class="caption">
-<span>Meet & Greet Session</span>
-<p>Interactive Character Engagement With Children</p>
-</div>
-</div>
-
-<div class="slide">
-<img src="event3.JPG">
-<div class="caption">
-<span>Corporate Activation</span>
-<p>Professional Brand Appearance & Promotion</p>
-</div>
-</div>
-
-<div class="slide">
-<img src="event4.JPG">
-<div class="caption">
-<span>Themed Celebration</span>
-<p>Custom Character Party Entertainment</p>
-</div>
-</div>
-
-<div class="slide">
-<img src="event5.JPG">
-<div class="caption">
-<span>Premium Birthday Experience</span>
-<p>Games, Energy & Crowd Interaction</p>
-</div>
-</div>
-
-<div class="slide">
-<img src="event6.JPG">
-<div class="caption">
-<span>Family Day Event</span>
-<p>Mascot Fun For Kids & Parents</p>
-</div>
-</div>
-
-<div class="slide">
-<img src="event7.JPG">
-<div class="caption">
-<span>Grand Entrance</span>
-<p>High-Impact Character Reveal & Photo Moments</p>
-</div>
-</div>
-
-<a class="prev" onclick="changeSlide(-1)">❮</a>
-<a class="next" onclick="changeSlide(1)">❯</a>
-
-</div>
-</section>
-
-<section class="cta">
-<h2>Ready To Create An Unforgettable Experience?</h2>
-<a href="https://wa.me/2348132370407?text=Hello%20Premium%20Concept,%20I%20would%20like%20to%20make%20an%20enquiry.%20Please%20share%20available%20packages,%20pricing,%20and%20availability." target="_blank" class="cta-btn">
+<!-- BOOK US NOW BUTTON -->
+<a href="https://wa.me/2348132370407?text=Hello%20Premium%20Concept,%0A%0AI%20would%20like%20to%20make%20an%20enquiry.%20Kindly%20share:%0A%0A1.%20Available%20mascot%20or%20entertainment%20packages%0A2.%20Pricing%20details%0A3.%20Availability%20for%20my%20event%20date%0A4.%20Any%20additional%20service%20options%20(Labubu,%20brand%20activations,%20corporate,%20etc.)%0A%0AThank%20you." 
+target="_blank" class="cta-btn">
 BOOK US NOW
 </a>
-</section>
-
-<footer>
-© 2026 Premium Concept. All Rights Reserved.
-</footer>
-
-<script>
-let slides=document.querySelectorAll(".slide");
-let index=0;
-
-function showSlide(i){
-slides.forEach(slide=>slide.classList.remove("active"));
-slides[i].classList.add("active");
-}
-
-function changeSlide(n){
-index=(index+n+slides.length)%slides.length;
-showSlide(index);
-}
-
-setInterval(()=>{
-index=(index+1)%slides.length;
-showSlide(index);
-},5000);
-</script>
 
 </body>
 </html>
