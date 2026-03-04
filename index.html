@@ -8,32 +8,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-font-family:'Poppins', sans-serif;
+font-family:'Poppins',sans-serif;
 background:#000;
 color:#fff;
 overflow-x:hidden;
 }
 
-/* GOLD PARTICLE BACKGROUND */
+/* Background glow */
 body::before{
 content:"";
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
+top:0;left:0;
+width:100%;height:100%;
 background:
 radial-gradient(circle at 20% 30%, rgba(255,215,0,0.15), transparent 40%),
-radial-gradient(circle at 80% 70%, rgba(255,215,0,0.1), transparent 40%),
-radial-gradient(circle at 50% 50%, rgba(255,215,0,0.08), transparent 60%);
+radial-gradient(circle at 80% 70%, rgba(255,215,0,0.1), transparent 40%);
 animation: glow 8s infinite alternate;
 z-index:-1;
 }
@@ -43,26 +35,22 @@ from{transform:scale(1);}
 to{transform:scale(1.05);}
 }
 
-/* HEADER */
+/* Header */
 header{
 text-align:center;
 padding:60px 20px 20px;
 }
 
 header img{
-width:120px;
+width:110px;
 margin-bottom:20px;
-animation: fadeDown 1.5s ease forwards;
-opacity:0;
 }
 
 .brand-title{
-font-family:'Playfair Display', serif;
+font-family:'Playfair Display',serif;
 font-size:42px;
 color:gold;
 letter-spacing:3px;
-animation: fadeUp 1.5s ease forwards;
-opacity:0;
 }
 
 .tagline{
@@ -70,11 +58,9 @@ letter-spacing:6px;
 color:#aaa;
 font-size:13px;
 margin-top:10px;
-animation: fadeUp 2s ease forwards;
-opacity:0;
 }
 
-/* HERO */
+/* Hero */
 .hero{
 text-align:center;
 padding:80px 20px;
@@ -83,11 +69,9 @@ margin:auto;
 }
 
 .hero h1{
-font-family:'Playfair Display', serif;
-font-size:50px;
+font-family:'Playfair Display',serif;
+font-size:48px;
 margin-bottom:20px;
-animation: fadeUp 2.5s ease forwards;
-opacity:0;
 }
 
 .hero p{
@@ -96,8 +80,6 @@ line-height:1.8;
 color:#ddd;
 max-width:700px;
 margin:auto;
-animation: fadeUp 3s ease forwards;
-opacity:0;
 }
 
 .cta-btn{
@@ -118,20 +100,20 @@ transform:scale(1.05);
 box-shadow:0 0 25px rgba(255,215,0,0.9);
 }
 
-/* SECTIONS */
+/* Sections */
 section{
 padding:100px 20px;
 text-align:center;
 }
 
 section h2{
-font-family:'Playfair Display', serif;
+font-family:'Playfair Display',serif;
 font-size:38px;
 margin-bottom:50px;
 color:gold;
 }
 
-/* SERVICES */
+/* Services */
 .services{
 display:flex;
 flex-wrap:wrap;
@@ -149,7 +131,7 @@ transition:0.4s;
 }
 
 .service-box:hover{
-transform:translateY(-12px);
+transform:translateY(-10px);
 border-color:gold;
 box-shadow:0 0 20px rgba(255,215,0,0.4);
 }
@@ -160,7 +142,7 @@ font-size:22px;
 color:gold;
 }
 
-/* GALLERY */
+/* Gallery */
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -171,14 +153,9 @@ padding:0 20px;
 .gallery img{
 width:100%;
 border-radius:12px;
-transition:0.4s;
 }
 
-.gallery img:hover{
-transform:scale(1.08);
-}
-
-/* ABOUT */
+/* About */
 .about{
 max-width:850px;
 margin:auto;
@@ -187,7 +164,7 @@ line-height:1.9;
 color:#ddd;
 }
 
-/* CONTACT */
+/* Contact */
 .contact a{
 display:inline-block;
 margin-top:30px;
@@ -197,47 +174,25 @@ color:#fff;
 text-decoration:none;
 border-radius:5px;
 font-weight:600;
-transition:0.3s;
 }
 
-.contact a:hover{
-transform:scale(1.05);
-}
-
-/* FOOTER */
 footer{
 padding:40px;
 text-align:center;
-background:#000;
 color:#777;
-font-size:14px;
 border-top:1px solid rgba(255,215,0,0.2);
 }
 
-/* ANIMATIONS */
-@keyframes fadeUp{
-from{opacity:0; transform:translateY(40px);}
-to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes fadeDown{
-from{opacity:0; transform:translateY(-40px);}
-to{opacity:1; transform:translateY(0);}
-}
-
 @media(max-width:768px){
-.hero h1{
-font-size:36px;
+.hero h1{font-size:34px;}
 }
-}
-
 </style>
 </head>
 
 <body>
 
 <header>
-<img src="PC logo.PNG" alt="Premium Concept Logo">
+<img src="logo.png" alt="Premium Concept Logo">
 <div class="brand-title">PREMIUM CONCEPT</div>
 <div class="tagline">ELEVATING EXCELLENCE</div>
 </header>
@@ -246,40 +201,32 @@ font-size:36px;
 <h1>Where Premium Meets Fun</h1>
 <p>
 Premium Concept is Lagos’ leading luxury mascot and costume entertainment brand.
-We specialize in high-end kids parties, elite corporate activations, and
-custom-themed performances designed to leave lasting impressions.
-Every appearance is crafted with precision, elegance, and unmatched professionalism.
+We specialize in high-end kids parties, elite corporate activations,
+and custom-themed performances designed to leave lasting impressions.
 </p>
-
 <a href="https://wa.me/2348132370407" class="cta-btn">Book Now</a>
 </div>
 
 <section>
 <h2>Our Premium Services</h2>
-
 <div class="services">
-
 <div class="service-box">
 <h3>Kids Luxury Parties</h3>
-<p>High-quality mascot appearances delivering excitement, magic, and unforgettable childhood memories with elegance and structure.</p>
+<p>Exciting mascot experiences crafted with elegance and professionalism.</p>
 </div>
-
 <div class="service-box">
 <h3>Corporate Brand Events</h3>
-<p>Professional mascot activations and immersive performances tailored to enhance brand visibility and audience engagement.</p>
+<p>Structured mascot activations tailored for premium brand engagement.</p>
 </div>
-
 <div class="service-box">
-<h3>Exclusive Special Appearances</h3>
-<p>Custom-designed themed performances crafted specifically for VIP celebrations, product launches, and high-profile events.</p>
+<h3>Exclusive Appearances</h3>
+<p>Custom-themed performances for VIP and high-profile celebrations.</p>
 </div>
-
 </div>
 </section>
 
 <section>
 <h2>Event Portfolio</h2>
-
 <div class="gallery">
 <img src="event1.jpg" alt="Event 1">
 <img src="event2.jpg" alt="Event 2">
@@ -289,25 +236,19 @@ Every appearance is crafted with precision, elegance, and unmatched professional
 <img src="event6.jpg" alt="Event 6">
 <img src="event7.jpg" alt="Event 7">
 </div>
-
 </section>
 
 <section>
 <h2>Why Choose Premium Concept?</h2>
-
 <div class="about">
 We do not simply entertain — we deliver premium experiences.
-From costume detailing and performance choreography to punctuality and event professionalism,
-our team operates at a refined standard.
-Premium Concept represents class, structure, creativity, and unforgettable impact.
-When excellence is non-negotiable, we are the brand of choice.
+From costume detailing to punctuality and professionalism,
+every performance is designed to exceed expectations.
 </div>
-
 </section>
 
 <section class="contact">
 <h2>Let’s Create Something Exceptional</h2>
-<p>Connect with us instantly and secure your event date.</p>
 <a href="https://wa.me/2348132370407">Chat on WhatsApp</a>
 </section>
 
