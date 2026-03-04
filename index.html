@@ -3,343 +3,235 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Concept | Elevating Excellence</title>
+<title>Premium Concept</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #000;
-  color: #fff;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
 }
 
-section {
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.gold-text {
-  background: linear-gradient(90deg,#d4af37,#fff3b0,#d4af37);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-h1,h2,h3 {
-  font-family: 'Playfair Display', serif;
-}
-
-/* HERO */
+/* ================= HERO ================= */
 
 .hero {
-  background: linear-gradient(to bottom,#000 0%,#111 100%);
-  padding-top: 120px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
 }
 
-.hero img {
-  margin-bottom: 30px;
-  width: 90px;
+/* 🔥 LOGO MADE BIGGER */
+.logo {
+    width: 260px;
+    height: auto;
+    margin-bottom: 25px;
 }
 
+/* 🔥 HEADING MADE SMALLER */
 .hero h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: #E5C76B;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 .hero p {
-  max-width: 700px;
-  margin: auto;
-  font-size: 18px;
-  line-height: 1.8;
-  color: #ccc;
+    max-width: 600px;
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 35px;
 }
 
-.btn-gold {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 40px;
-  background: linear-gradient(90deg,#d4af37,#fff3b0);
-  color: #000;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s ease;
+.btn {
+    padding: 14px 40px;
+    font-size: 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #000;
+    background: linear-gradient(135deg, #E5C76B, #C6A84E);
+    transition: 0.3s ease;
 }
 
-.btn-gold:hover {
-  transform: scale(1.05);
+.btn:hover {
+    opacity: 0.85;
 }
 
-/* SERVICES */
+/* ================= SERVICES ================= */
 
 .services {
-  background: #0a0a0a;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    color: #E5C76B;
+    margin-bottom: 40px;
 }
 
 .service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-  gap: 40px;
-  margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
-.service-card {
-  border: 1px solid rgba(212,175,55,0.3);
-  padding: 40px 30px;
-  border-radius: 10px;
-  background: #111;
-  transition: 0.4s ease;
+.service-box {
+    background: #111;
+    padding: 30px;
+    border-radius: 8px;
 }
 
-.service-card:hover {
-  transform: translateY(-10px);
-  border-color: #d4af37;
+.service-box h3 {
+    color: #E5C76B;
+    margin-bottom: 15px;
 }
 
-.service-card h3 {
-  margin-bottom: 20px;
-  font-size: 22px;
-}
-
-.service-card p {
-  color: #ccc;
-  line-height: 1.7;
-}
-
-/* WHY */
-
-.why {
-  background: linear-gradient(to bottom,#111,#000);
-}
-
-.why p {
-  max-width: 800px;
-  margin: auto;
-  margin-top: 30px;
-  color: #ccc;
-  line-height: 1.8;
-}
-
-/* SLIDESHOW */
+/* ================= GALLERY ================= */
 
 .gallery {
-  background: #000;
+    padding: 80px 20px;
+    text-align: center;
 }
 
-.slideshow-container {
-  position: relative;
-  max-width: 900px;
-  margin: 60px auto 0;
+.gallery h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    color: #E5C76B;
+    margin-bottom: 40px;
 }
 
-.slide {
-  display: none;
-  position: relative;
+.slideshow {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
 }
 
-.slide img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 10px;
+.slideshow img {
+    width: 100%;
+    border-radius: 10px;
+    display: none;
 }
 
-.caption {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 25px;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-  text-align: left;
+.slideshow img.active {
+    display: block;
 }
 
-.caption h3 {
-  font-size: 22px;
-  margin-bottom: 5px;
-}
-
-.caption p {
-  color: #ccc;
-  font-size: 15px;
-}
-
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  padding: 12px;
-  color: #d4af37;
-  font-size: 28px;
-  font-weight: bold;
-  user-select: none;
-}
-
-.prev { left: 0; }
-.next { right: 0; }
-
-.prev:hover, .next:hover {
-  color: #fff3b0;
-}
-
-/* WHATSAPP */
-
-.whatsapp {
-  background: #0a0a0a;
-}
-
-.whatsapp a {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 35px;
-  background: #25D366;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-
-.whatsapp a:hover {
-  transform: scale(1.05);
-}
+/* ================= FOOTER ================= */
 
 footer {
-  padding: 30px;
-  font-size: 14px;
-  color: #888;
-  border-top: 1px solid rgba(212,175,55,0.2);
+    padding: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+    .logo {
+        width: 180px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
+
 <section class="hero">
-  <img src="logo.svg" alt="Premium Concept Logo">
-  <h1 class="gold-text">Where Premium Meets Fun</h1>
-  <p>
-    Lagos’ premium mascot & costume entertainment brand for kids and corporate events.
-    We create unforgettable memories with class, excellence, and energy.
-  </p>
-  <a href="https://wa.me/2348132370407" class="btn-gold">Book a Call</a>
+
+    <img src="logo.svg" alt="Premium Concept Logo" class="logo">
+
+    <h1>Where Premium Meets Fun</h1>
+
+    <p>
+        Lagos’ premium mascot & costume entertainment brand for kids and corporate events.
+        We create unforgettable memories with class, excellence, and energy.
+    </p>
+
+    <a href="https://wa.me/2348132370407" class="btn">Book a Call</a>
+
 </section>
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
+
 <section class="services">
-  <h2 class="gold-text">Our Services</h2>
-  <div class="service-grid">
+    <h2>Our Services</h2>
 
-    <div class="service-card">
-      <h3 class="gold-text">Kids Parties</h3>
-      <p>Fun-filled mascot appearances that bring joy and unforgettable memories.</p>
+    <div class="service-grid">
+
+        <div class="service-box">
+            <h3>Kids Birthday Mascots</h3>
+            <p>High-energy character appearances that create magical party experiences.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>Corporate Entertainment</h3>
+            <p>Professional costume performances for brand launches and company events.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>Custom Character Booking</h3>
+            <p>Tailored mascot experiences designed to match your event theme.</p>
+        </div>
+
     </div>
-
-    <div class="service-card">
-      <h3 class="gold-text">Corporate Events</h3>
-      <p>Premium entertainment experiences that elevate brand engagement.</p>
-    </div>
-
-    <div class="service-card">
-      <h3 class="gold-text">Special Appearances</h3>
-      <p>Custom-themed mascot performances tailored to your event needs.</p>
-    </div>
-
-  </div>
 </section>
 
-<!-- WHY -->
-<section class="why">
-  <h2 class="gold-text">Why Premium Concept?</h2>
-  <p>
-    We don’t just entertain—we deliver premium experiences.
-    From costume quality to professionalism, we operate at a higher standard.
-  </p>
-</section>
+<!-- ================= GALLERY ================= -->
 
-<!-- SLIDESHOW -->
 <section class="gallery">
-  <h2 class="gold-text">Recent Events</h2>
+    <h2>Event Highlights</h2>
 
-  <div class="slideshow-container">
-
-    <div class="slide">
-      <img src="event1.JPG">
-      <div class="caption"><h3>Birthday Celebration</h3><p>Energetic mascot performance.</p></div>
+    <div class="slideshow">
+        <img src="gallery1.jpg" class="active">
+        <img src="gallery2.jpg">
+        <img src="gallery3.jpg">
     </div>
-
-    <div class="slide">
-      <img src="event2.JPG">
-      <div class="caption"><h3>Corporate Activation</h3><p>Premium brand engagement.</p></div>
-    </div>
-
-    <div class="slide">
-      <img src="event3.JPG">
-      <div class="caption"><h3>School Fun Day</h3><p>Interactive kids entertainment.</p></div>
-    </div>
-
-    <div class="slide">
-      <img src="event4.JPG">
-      <div class="caption"><h3>Private Party</h3><p>High-energy themed show.</p></div>
-    </div>
-
-    <div class="slide">
-      <img src="event5.JPG">
-      <div class="caption"><h3>Special Appearance</h3><p>Custom character experience.</p></div>
-    </div>
-
-    <div class="slide">
-      <img src="event6.JPG">
-      <div class="caption"><h3>Brand Launch</h3><p>Premium activation performance.</p></div>
-    </div>
-
-    <div class="slide">
-      <img src="event7.JPG">
-      <div class="caption"><h3>Kids Experience</h3><p>Fun and memorable interaction.</p></div>
-    </div>
-
-    <a class="prev" onclick="changeSlide(-1)">❮</a>
-    <a class="next" onclick="changeSlide(1)">❯</a>
-
-  </div>
 </section>
 
-<!-- WHATSAPP -->
-<section class="whatsapp">
-  <h2 class="gold-text">Book Your Event Today</h2>
-  <p>Let’s create something unforgettable.</p>
-  <a href="https://wa.me/2348132370407">Chat with us on WhatsApp</a>
-</section>
+<!-- ================= FOOTER ================= -->
 
 <footer>
-  © 2026 Premium Concept | Lagos, Nigeria
+    © 2026 Premium Concept. All Rights Reserved.
 </footer>
 
+<!-- ================= SLIDESHOW SCRIPT ================= -->
+
 <script>
-let slideIndex = 0;
-showSlides();
+let slides = document.querySelectorAll('.slideshow img');
+let current = 0;
 
-function showSlides() {
-  let slides = document.getElementsByClassName("slide");
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1 }
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 5000);
-}
-
-function changeSlide(n) {
-  slideIndex += n - 1;
-  showSlides();
-}
+setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+}, 3000);
 </script>
 
 </body>
