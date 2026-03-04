@@ -5,194 +5,253 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Concept</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: black;
-  color: white;
-  text-align: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* HEADER */
-.header {
-  padding: 40px 20px 20px;
+body{
+    font-family:'Poppins', sans-serif;
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
 }
 
-.logo {
-  width: 160px; /* Increased again */
-  margin-bottom: 10px;
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.9);
+    z-index:1000;
 }
 
-.brand-title {
-  font-size: 40px;
-  letter-spacing: 6px;
-  font-weight: 500;
+nav img{
+    height:60px;
 }
 
-.brand-sub {
-  color: #d4af37;
-  letter-spacing: 4px;
-  font-size: 14px;
-  margin-top: 5px;
+nav a{
+    color:#d4af37;
+    text-decoration:none;
+    font-weight:500;
 }
 
-/* TAGLINE */
-.tagline {
-  font-size: 24px;
-  letter-spacing: 4px;
-  margin-top: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  background: linear-gradient(90deg, #d4af37, #ffffff, #d4af37);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: glow 3s ease-in-out infinite alternate;
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
 }
 
-.tagline .line {
-  width: 60px;
-  height: 1px;
-  background: #d4af37;
+.hero h1{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    background:linear-gradient(90deg,#d4af37,#f8e9a1,#d4af37);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    letter-spacing:2px;
 }
 
-@keyframes glow {
-  from { text-shadow: 0 0 5px rgba(212,175,55,0.4); }
-  to { text-shadow: 0 0 15px rgba(212,175,55,0.9); }
+.hero p{
+    margin-top:20px;
+    font-size:18px;
+    color:#ccc;
 }
 
-/* DESCRIPTION */
-.description {
-  max-width: 700px;
-  margin: 20px auto;
-  line-height: 1.7;
-  font-size: 16px;
-  color: #ccc;
+.hero button{
+    margin-top:40px;
+    padding:15px 40px;
+    border:none;
+    background:#d4af37;
+    color:#000;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-/* BUTTON */
-.cta-button {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 14px 35px;
-  background: linear-gradient(45deg, #d4af37, #b8902e);
-  color: black;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-.cta-button:hover {
-  transform: scale(1.05);
+.hero button:hover{
+    background:#fff;
 }
 
 /* SERVICES */
-.services {
-  margin-top: 80px;
-  padding: 40px 20px;
+.services{
+    padding:100px 10%;
+    text-align:center;
 }
 
-.services h2 {
-  font-size: 28px;
-  letter-spacing: 4px;
-  margin-bottom: 40px;
+.services h2{
+    font-family:'Playfair Display', serif;
+    font-size:40px;
+    color:#d4af37;
+    margin-bottom:40px;
 }
 
-.service-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
 }
 
-.service-box {
-  width: 280px;
-  padding: 30px 20px;
-  border: 1px solid #d4af37;
-  border-radius: 10px;
-  transition: 0.3s;
+.service-card{
+    background:#111;
+    padding:30px;
+    border:1px solid #222;
+    transition:0.3s;
 }
 
-.service-box:hover {
-  box-shadow: 0 0 20px rgba(212,175,55,0.6);
+.service-card:hover{
+    border:1px solid #d4af37;
+    transform:translateY(-5px);
 }
 
-.service-box h3 {
-  color: #d4af37;
-  margin-bottom: 15px;
+/* GALLERY */
+.gallery{
+    padding:100px 0;
+    text-align:center;
 }
 
-/* WHY SECTION */
-.why {
-  margin-top: 80px;
-  padding: 40px 20px;
+.gallery h2{
+    font-family:'Playfair Display', serif;
+    font-size:40px;
+    color:#d4af37;
+    margin-bottom:40px;
 }
 
-.why h2 {
-  font-size: 28px;
-  letter-spacing: 4px;
+.slider{
+    position:relative;
+    width:100%;
+    height:500px;
+    overflow:hidden;
 }
 
-.why p {
-  max-width: 700px;
-  margin: 20px auto;
-  color: #ccc;
-  line-height: 1.7;
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:opacity 1s ease-in-out;
 }
 
-/* FOOTER */
-footer {
-  margin-top: 80px;
-  padding: 20px;
-  font-size: 14px;
-  color: #888;
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.active{
+    opacity:1;
+}
+
+/* CONTACT */
+.contact{
+    padding:100px 10%;
+    text-align:center;
+}
+
+.contact h2{
+    font-family:'Playfair Display', serif;
+    font-size:40px;
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.contact button{
+    padding:15px 40px;
+    border:none;
+    background:#d4af37;
+    color:#000;
+    font-weight:600;
+    cursor:pointer;
+}
+
+footer{
+    text-align:center;
+    padding:40px 0;
+    background:#111;
+    color:#777;
 }
 </style>
 </head>
-
 <body>
 
-<div class="header">
-  <img src="logo.png" alt="Premium Concept Logo" class="logo">
-  <div class="brand-title">PREMIUM CONCEPT</div>
-  <div class="brand-sub">ELEVATING EXCELLENCE</div>
-</div>
+<!-- NAV -->
+<nav>
+    <img src="logo.svg" alt="Premium Concept Logo">
+    <a href="#contact">BOOK US</a>
+</nav>
 
-<h2 class="tagline">
-  <span class="line"></span>
-  Where Premium Meets Fun
-  <span class="line"></span>
-</h2>
+<!-- HERO -->
+<section class="hero">
+    <h1>Where Premium Meets Fun</h1>
+    <p>Luxury event experiences crafted with elegance, energy and unforgettable moments.</p>
+    <button onclick="bookNow()">BOOK US NOW</button>
+</section>
 
-<p class="description">
-Lagos’ premium mascot & costume entertainment brand for kids and corporate events.
-We create unforgettable memories with class, excellence, and energy.
-</p>
-
-<a class="cta-button" 
-href="https://wa.me/2348132370407?text=Hello%20Premium%20Concept,%20I%20would%20like%20to%20book%20a%20service.%0A%0AEvent%20Type:%20%0ADate:%20%0ALocation:%20%0ASpecific%20Service%20(Mascot/Labobo/Others):%20">
-BOOK US NOW
-</a>
-
+<!-- SERVICES -->
 <section class="services">
-  <h2>Our Services</h2>
-  <div class="service-container">
-
-    <div class="service-box">
-      <h3>Kids Parties</h3>
-      <p>Fun-filled mascot appearances that bring joy, laughter, and unforgettable memories.</p>
+    <h2>Services Rendered</h2>
+    <div class="service-grid">
+        <div class="service-card">Luxury Birthday Celebrations</div>
+        <div class="service-card">Corporate Events</div>
+        <div class="service-card">Wedding After-Parties</div>
+        <div class="service-card">Private VIP Events</div>
+        <div class="service-card">Outdoor Event Setup</div>
+        <div class="service-card">Premium Decorations & Styling</div>
     </div>
+</section>
 
-    <div class="service-box">
-      <h3>Corporate Events</h3>
-      <p>Premium entertainment experiences that elevate brand engagement and audience excitement.</p>
+<!-- GALLERY -->
+<section class="gallery">
+    <h2>Event Gallery</h2>
+    <div class="slider">
+        <div class="slide active"><img src="event1.JPG"></div>
+        <div class="slide"><img src="event2.JPG"></div>
+        <div class="slide"><img src="event3.JPG"></div>
+        <div class="slide"><img src="event4.JPG"></div>
+        <div class="slide"><img src="event5.JPG"></div>
+        <div class="slide"><img src="event6.JPG"></div>
+        <div class="slide"><img src="event7.JPG"></div>
     </div>
+</section>
 
-    <div class="service-box">
-      <h3>Special Appearances</h3>
-      <p>Custom-themed mascot performances tailored to your
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Let’s Create Something Premium</h2>
+    <button onclick="bookNow()">BOOK US NOW</button>
+</section>
+
+<footer>
+    © 2026 Premium Concept. All Rights Reserved.
+</footer>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+setInterval(()=>{
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+},4000);
+
+function bookNow(){
+    let message = encodeURIComponent(
+        "Hello Premium Concept,%0A%0AI would like to book an event.%0A%0AEvent Type:%0AEvent Date:%0ALocation:%0ABudget Range:%0AAdditional Details:"
+    );
+    window.open("https://wa.me/2348132370407?text=" + message, "_blank");
+}
+</script>
+
+</body>
+</html>
