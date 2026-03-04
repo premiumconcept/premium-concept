@@ -3,164 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Concept</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Elite Character Events</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  background:#000;
-  color:#fff;
-  font-family:'Montserrat',sans-serif;
-  overflow-x:hidden;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  scroll-behavior: smooth;
 }
 
 /* HEADER */
-header{
-  padding:40px 0;
-  text-align:center;
+header {
+  background: #000;
+  padding: 20px;
+  text-align: center;
 }
 
-.logo img{
-  width:220px;
-  max-width:80%;
+.logo {
+  width: 200px; /* Enlarged logo */
 }
 
 /* HERO */
-.hero{
-  text-align:center;
-  padding:70px 20px 100px;
+.hero {
+  height: 90vh;
+  background: url('hero.JPG') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:32px;
-  margin-bottom:20px;
-}
-
-.hero p{
-  font-size:15px;
-  letter-spacing:2px;
-  color:#bbb;
-  margin-bottom:40px;
-}
-
-.cta-btn{
-  display:inline-block;
-  padding:14px 40px;
-  background:#c8a24d;
-  color:#000;
-  text-decoration:none;
-  font-weight:500;
-  letter-spacing:2px;
-  transition:.3s ease;
-}
-
-.cta-btn:hover{
-  background:#e0b85c;
+.hero h1 {
+  font-size: 3rem;
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
 }
 
 /* SERVICES */
-.services{
-  padding:100px 20px;
-  text-align:center;
+.services {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.services h2{
-  font-family:'Playfair Display',serif;
-  font-size:34px;
-  margin-bottom:60px;
+.services h2 {
+  margin-bottom: 40px;
 }
 
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:60px;
-  max-width:1100px;
-  margin:auto;
+.service-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
 }
 
-.service-item h3{
-  font-size:20px;
-  margin-bottom:15px;
-  color:#c8a24d;
-}
-
-.service-item p{
-  font-size:14px;
-  color:#ccc;
-  line-height:1.6;
-}
-
-/* Scroll Glide Effect */
-.service-item{
-  opacity:0;
-  transform:translateY(40px);
-  transition:opacity 0.8s ease, transform 0.8s ease;
-}
-
-.service-item.show{
-  opacity:1;
-  transform:translateY(0);
+.service {
+  min-width: 280px;
+  background: #111;
+  padding: 30px;
+  border-radius: 10px;
+  scroll-snap-align: center;
+  flex-shrink: 0;
 }
 
 /* GALLERY */
-.gallery{
-  padding:120px 20px;
-  text-align:center;
+.gallery {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.gallery h2{
-  font-family:'Playfair Display',serif;
-  font-size:34px;
-  margin-bottom:50px;
+.slideshow {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
 }
 
-.slider{
-  position:relative;
-  max-width:900px;
-  margin:auto;
-  overflow:hidden;
+.slide {
+  display: none;
+  position: relative;
 }
 
-.slides{
-  display:flex;
-  transition:transform 0.6s ease-in-out;
+.slide img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-.slide{
-  min-width:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+.caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0,0,0,0.7);
+  font-size: 18px;
 }
 
-.slide img{
-  width:100%;
-  height:auto;
-  border-radius:8px;
+.active {
+  display: block;
 }
 
-.caption{
-  margin-top:15px;
-  color:#ccc;
-  font-size:15px;
+/* BUTTON */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px 20px;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* FOOTER */
-footer{
-  padding:40px 20px;
-  text-align:center;
-  font-size:13px;
-  color:#777;
-  border-top:1px solid #222;
-  margin-top:80px;
+footer {
+  background: #111;
+  padding: 30px;
+  text-align: center;
 }
 </style>
 </head>
@@ -168,129 +128,101 @@ footer{
 <body>
 
 <header>
-  <div class="logo">
-    <img src="logo.svg" alt="Premium Concept Logo">
-  </div>
+  <img src="logo.png" class="logo">
 </header>
 
 <section class="hero">
-  <h1>Let’s Create Something Premium</h1>
-  <p>Luxury Character Experiences & Event Productions</p>
-
-  <a class="cta-btn"
-     href="https://wa.me/2348132370407?text=Hi%20I%27d%20love%20to%20book%20you%20for%20an%20event"
-     target="_blank">
-     BOOK US NOW
-  </a>
+  <h1>Luxury Character & Event Experiences</h1>
 </section>
 
 <section class="services">
   <h2>Our Services</h2>
 
-  <div class="services-grid">
-
-    <div class="service-item">
-      <h3>Luxury Birthday Experiences</h3>
-      <p>Premium themed productions with high-impact character performances.</p>
+  <div class="service-slider">
+    <div class="service">
+      <h3>Character Appearances</h3>
+      <p>Premium mascots & superhero experiences.</p>
     </div>
 
-    <div class="service-item">
+    <div class="service">
+      <h3>Birthday Experiences</h3>
+      <p>Unforgettable themed birthday celebrations.</p>
+    </div>
+
+    <div class="service">
       <h3>Corporate Activations</h3>
-      <p>Brand-focused mascot and character engagements for company events.</p>
+      <p>High-impact brand event entertainment.</p>
     </div>
 
-    <div class="service-item">
-      <h3>Festival & Public Events</h3>
-      <p>Large-scale interactive entertainment for public celebrations.</p>
+    <div class="service">
+      <h3>Festival & VIP Events</h3>
+      <p>Luxury character showcases for elite gatherings.</p>
     </div>
-
-    <div class="service-item">
-      <h3>Character Rentals</h3>
-      <p>Transformer, Superhero & Custom Mascot appearances.</p>
-    </div>
-
   </div>
 </section>
 
 <section class="gallery">
-  <h2>Event Highlights</h2>
+  <h2>Gallery</h2>
 
-  <div class="slider">
-    <div class="slides">
+  <div class="slideshow">
 
-      <div class="slide">
-        <img src="event1.JPG">
-        <div class="caption">Premium Transformer Stage Entrance</div>
-      </div>
-
-      <div class="slide">
-        <img src="event2.JPG">
-        <div class="caption">Luxury Children’s Birthday Experience</div>
-      </div>
-
-      <div class="slide">
-        <img src="event3.JPG">
-        <div class="caption">Corporate Brand Activation Performance</div>
-      </div>
-
-      <div class="slide">
-        <img src="event4.JPG">
-        <div class="caption">High-Energy Festival Appearance</div>
-      </div>
-
-      <div class="slide">
-        <img src="event5.JPG">
-        <div class="caption">Custom Character Meet & Greet</div>
-      </div>
-
-      <div class="slide">
-        <img src="event6.JPG">
-        <div class="caption">Premium Mascot Crowd Engagement</div>
-      </div>
-
-      <div class="slide">
-        <img src="event7.JPG">
-        <div class="caption">Grand Event Performance Showcase</div>
-      </div>
-
+    <div class="slide active">
+      <img src="event1.JPG">
+      <div class="caption">Signature Character Party Experience</div>
     </div>
+
+    <div class="slide">
+      <img src="event2.JPG">
+      <div class="caption">Sweet Birthday Celebration Moments</div>
+    </div>
+
+    <div class="slide">
+      <img src="event3.JPG">
+      <div class="caption">Epic Character Party Experience</div>
+    </div>
+
+    <div class="slide">
+      <img src="event4.JPG">
+      <div class="caption">Fun Mascot Experience</div>
+    </div>
+
+    <div class="slide">
+      <img src="event5.JPG">
+      <div class="caption">High-Energy Brand Activation</div>
+    </div>
+
+    <div class="slide">
+      <img src="event6.JPG">
+      <div class="caption">Luxury Event Character Experience</div>
+    </div>
+
+    <div class="slide">
+      <img src="event7.JPG">
+      <div class="caption">Memorable Family Celebration</div>
+    </div>
+
   </div>
 </section>
 
+<a href="https://wa.me/1234567890" class="whatsapp">Book Us Now</a>
+
 <footer>
-  © 2026 Premium Concept. All rights reserved.
+  <p>© 2026 Elite Character Events. All Rights Reserved.</p>
 </footer>
 
 <script>
-/* SERVICES SCROLL GLIDE */
-const serviceItems = document.querySelectorAll('.service-item');
+let slides = document.querySelectorAll('.slide');
+let index = 0;
 
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-},{threshold:0.2});
-
-serviceItems.forEach(item=>{
-  observer.observe(item);
-});
-
-/* GALLERY SLIDER */
-let currentIndex = 0;
-const slides = document.querySelector('.slides');
-const totalSlides = document.querySelectorAll('.slide').length;
-
-function moveSlide(){
-  currentIndex++;
-  if(currentIndex >= totalSlides){
-    currentIndex = 0;
-  }
-  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+function showSlides() {
+  slides.forEach(slide => slide.classList.remove('active'));
+  index++;
+  if (index > slides.length) { index = 1; }
+  slides[index-1].classList.add('active');
+  setTimeout(showSlides, 4000);
 }
 
-setInterval(moveSlide,4000);
+showSlides();
 </script>
 
 </body>
