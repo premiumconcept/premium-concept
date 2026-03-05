@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Premium Concept</title>
 
 <style>
@@ -17,97 +15,78 @@ color:white;
 text-align:center;
 }
 
-/* HERO */
-
-.hero{
-padding:80px 20px;
-background:radial-gradient(circle, rgba(255,165,0,0.35), black 70%);
-}
-
-.hero img{
-width:160px;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:42px;
-margin-bottom:20px;
-}
-
-.hero p{
-max-width:600px;
-margin:auto;
-line-height:1.7;
-font-size:18px;
-color:#ddd;
-}
-
-.book-btn{
-margin-top:30px;
-display:inline-block;
-padding:14px 35px;
-background:#66aa55;
-border-radius:40px;
-color:white;
-font-size:18px;
-text-decoration:none;
-}
-
-/* SERVICES */
-
-.services{
+section{
 padding:80px 20px;
 }
 
-.services h2{
-font-size:34px;
-margin-bottom:40px;
+.logo{
+width:280px;
+margin-bottom:20px;
 }
 
-.service-slider{
-display:flex;
-overflow-x:auto;
-gap:20px;
-padding:20px;
-scroll-snap-type:x mandatory;
-}
-
-.service-card{
-min-width:260px;
-scroll-snap-align:center;
-background:#111;
-padding:30px;
-border-radius:20px;
-box-shadow:0 0 25px rgba(255,165,0,0.25);
-}
-
-.service-card h3{
+.hero-title{
+font-size:32px;
+font-weight:600;
 margin-bottom:10px;
 }
 
-/* GALLERY */
-
-#gallery{
-padding:80px 20px;
+.about{
+max-width:600px;
+margin:auto;
+font-size:18px;
+line-height:1.6;
+opacity:.9;
 }
 
-#gallery h2{
-font-size:34px;
+.book-btn{
+display:inline-block;
+margin-top:30px;
+padding:14px 35px;
+background:#f7b500;
+color:black;
+font-weight:bold;
+border-radius:6px;
+text-decoration:none;
+font-size:18px;
+}
+
+.book-btn:hover{
+opacity:.9;
+}
+
+.services-title{
+font-size:30px;
 margin-bottom:40px;
 }
 
-.gallery-slider{
+.services-slider{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding-bottom:20px;
+}
+
+.service-card{
+min-width:220px;
+background:#111;
+padding:30px;
+border-radius:10px;
+border:1px solid #333;
+}
+
+.gallery-title{
+font-size:32px;
+margin-bottom:50px;
+}
+
+.gallery-container{
 position:relative;
-max-width:700px;
+max-width:900px;
 margin:auto;
 }
 
 .slide{
 display:none;
-}
-
-.slide.active{
-display:block;
 }
 
 .slide img{
@@ -116,38 +95,24 @@ border-radius:10px;
 }
 
 .caption{
-margin-top:10px;
-color:#ddd;
+margin-top:12px;
+font-size:16px;
+opacity:.9;
 }
 
 .prev, .next{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,0.5);
-border:none;
-color:white;
-font-size:30px;
-padding:10px;
 cursor:pointer;
-}
-
-.prev{
-left:-40px;
+position:absolute;
+top:45%;
+padding:16px;
+color:white;
+font-weight:bold;
+font-size:24px;
+background:rgba(0,0,0,.5);
 }
 
 .next{
-right:-40px;
-}
-
-/* FOOTER */
-
-footer{
-padding:40px;
-color:#aaa;
-font-size:14px;
-border-top:1px solid #222;
-margin-top:80px;
+right:0;
 }
 
 </style>
@@ -155,156 +120,155 @@ margin-top:80px;
 
 <body>
 
-<!-- HERO -->
 
-<section class="hero">
+<section>
 
-<img src="logo.svg">
+<img src="logo.svg" class="logo">
 
-<h1>Where Premium Meets Fun</h1>
+<div class="hero-title">
+Where Premium Meets Fun
+</div>
 
-<p>
-Lagos premium mascot & costume entertainment brand for kids
-and corporate events. We create unforgettable memories
-with class, excellence and energy.
-</p>
+<div class="about">
+Lagos premium mascot & costume entertainment brand for kids and corporate events. We create unforgettable memories with class, excellence and energy.
+</div>
 
-<a class="book-btn" href="#">Book Us</a>
+<a href="https://wa.me/2348132370407?text=Hello%20Premium%20Concept%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20your%20entertainment%20services%20for%20an%20event." class="book-btn" target="_blank">
+Book Us
+</a>
 
 </section>
 
-<!-- SERVICES -->
 
-<section class="services">
+<section>
 
-<h2>Our Services</h2>
+<div class="services-title">
+Our Services
+</div>
 
-<div class="service-slider">
+<div class="services-slider">
 
 <div class="service-card">
-<h3>Character Entertainment</h3>
-<p>Premium characters bringing excitement to your events.</p>
+Mascot Entertainment
 </div>
 
 <div class="service-card">
-<h3>Mascot Experiences</h3>
-<p>Interactive mascots perfect for birthdays and celebrations.</p>
+Character Appearances
 </div>
 
 <div class="service-card">
-<h3>Event Activations</h3>
-<p>Creating unforgettable event moments and guest engagement.</p>
+Kids Party Entertainment
+</div>
+
+<div class="service-card">
+Corporate Event Entertainment
+</div>
+
+<div class="service-card">
+Costume Experiences
 </div>
 
 </div>
 
 </section>
 
-<!-- GALLERY -->
 
-<section id="gallery">
+<section>
 
-<h2>Gallery of Steeze ✨</h2>
+<div class="gallery-title">
+Gallery of Steeze
+</div>
 
-<div class="gallery-slider">
+<div class="gallery-container">
 
-<button class="prev">&#10094;</button>
-
-<div class="slide active">
+<div class="slide">
 <img src="event1.JPG">
-<p class="caption">Premium Character Entertainment</p>
+<div class="caption">
+Premium mascot moment bringing fun and excitement to a children's celebration.
+</div>
 </div>
 
 <div class="slide">
 <img src="event2.JPG">
-<p class="caption">Premium Character Displays</p>
+<div class="caption">
+Energy filled performance creating unforgettable smiles and laughter.
+</div>
 </div>
 
 <div class="slide">
 <img src="event3.JPG">
-<p class="caption">Luxury Birthday Celebrations</p>
+<div class="caption">
+Premium entertainment experience designed to elevate every celebration.
+</div>
 </div>
 
 <div class="slide">
 <img src="event4.JPG">
-<p class="caption">Mascot Character Entertainment</p>
+<div class="caption">
+Unforgettable kids event experience filled with excitement and joy.
+</div>
 </div>
 
 <div class="slide">
 <img src="event5.JPG">
-<p class="caption">Interactive Robot Character Experience</p>
+<div class="caption">
+Bringing premium fun and vibrant character energy to every celebration.
+</div>
 </div>
 
 <div class="slide">
 <img src="event6.JPG">
-<p class="caption">Premium Event Photo Moments</p>
+<div class="caption">
+A lively character experience creating magical moments for children.
+</div>
 </div>
 
 <div class="slide">
 <img src="event7.JPG">
-<p class="caption">Family Event Entertainment Experience</p>
+<div class="caption">
+Premium entertainment presence delivering unforgettable event vibes.
+</div>
 </div>
 
-<button class="next">&#10095;</button>
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
 
 </div>
 
 </section>
 
-<footer>
-
-© 2026 Premium Concept. All rights reserved.
-
-</footer>
 
 <script>
 
-/* GALLERY SLIDER */
+let slideIndex = 1;
+showSlides(slideIndex);
 
-let slides = document.querySelectorAll(".slide");
+function plusSlides(n){
+showSlides(slideIndex += n);
+}
 
-let index = 0;
+function showSlides(n){
 
-function showSlide(i){
+let slides = document.getElementsByClassName("slide");
 
-slides.forEach(slide => slide.classList.remove("active"));
+if(n > slides.length){
+slideIndex = 1
+}
 
-slides[i].classList.add("active");
+if(n < 1){
+slideIndex = slides.length
+}
+
+for(let i = 0; i < slides.length; i++){
+slides[i].style.display = "none";
+}
+
+slides[slideIndex-1].style.display = "block";
 
 }
 
-document.querySelector(".next").onclick = () =>{
-
-index++;
-
-if(index >= slides.length){index = 0;}
-
-showSlide(index);
-
-};
-
-document.querySelector(".prev").onclick = () =>{
-
-index--;
-
-if(index < 0){index = slides.length - 1;}
-
-showSlide(index);
-
-};
-
-setInterval(()=>{
-
-index++;
-
-if(index >= slides.length){index = 0;}
-
-showSlide(index);
-
-},4000);
-
 </script>
 
-</body>
 
+</body>
 </html>
