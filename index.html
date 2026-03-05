@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,101 +15,111 @@ color:white;
 text-align:center;
 }
 
-/* HEADER */
+/* HERO SECTION */
 
-header{
-padding:30px;
+.hero{
+background: radial-gradient(circle at center, #3a2a00, #000000 70%);
+padding:100px 20px;
 }
 
 .logo{
-width:180px;
-}
-
-/* HERO */
-
-.hero{
-padding:60px 20px;
+width:120px;
+margin-bottom:20px;
 }
 
 .hero h1{
-font-size:40px;
-margin-bottom:10px;
+font-size:38px;
+margin-bottom:20px;
 }
 
 .hero p{
 font-size:18px;
-opacity:0.8;
+color:#ccc;
+margin-bottom:30px;
 }
 
 /* BOOK BUTTON */
 
 .book-btn{
 display:inline-block;
-margin-top:20px;
-padding:14px 30px;
 background:#25D366;
 color:white;
+padding:15px 35px;
+border-radius:40px;
 text-decoration:none;
 font-size:18px;
-border-radius:30px;
+font-weight:bold;
+}
+
+.book-btn:hover{
+background:#1ebe5d;
 }
 
 /* SERVICES */
 
 .services{
-padding:60px 20px;
+padding:80px 20px;
 }
 
 .services h2{
-margin-bottom:30px;
+font-size:32px;
+margin-bottom:40px;
 }
 
-.service-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.service{
+.service-card{
 background:#111;
-padding:20px;
-border-radius:10px;
+padding:30px;
+margin:20px auto;
+border-radius:12px;
+max-width:500px;
+box-shadow:0 0 15px rgba(255,215,0,0.2);
+}
+
+.service-card h3{
+margin-bottom:10px;
 }
 
 /* GALLERY */
 
 .gallery{
-padding:60px 20px;
+padding:80px 20px;
 }
 
 .gallery h2{
+font-size:32px;
 margin-bottom:30px;
 }
 
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+.slider{
+position:relative;
+max-width:500px;
+margin:auto;
+overflow:hidden;
+border-radius:12px;
 }
 
-.gallery-item img{
+.slide{
+display:none;
+}
+
+.slide img{
 width:100%;
-border-radius:10px;
+border-radius:12px;
 }
 
 .caption{
 margin-top:10px;
-font-size:16px;
-opacity:0.9;
+color:#ddd;
 }
 
 /* FOOTER */
 
 footer{
-margin-top:60px;
+margin-top:80px;
 padding:30px;
+border-top:1px solid #222;
+color:#aaa;
 font-size:14px;
-opacity:0.6;
 }
 
 </style>
@@ -118,11 +127,11 @@ opacity:0.6;
 
 <body>
 
-<header>
-<img src="logo.svg" class="logo">
-</header>
+<!-- HERO -->
 
 <section class="hero">
+
+<img src="logo.svg" class="logo">
 
 <h1>Premium Character Entertainment</h1>
 
@@ -132,84 +141,105 @@ opacity:0.6;
 
 </section>
 
+<!-- SERVICES -->
 
 <section class="services">
 
 <h2>Our Services</h2>
 
-<div class="service-grid">
-
-<div class="service">
+<div class="service-card">
 <h3>Character Entertainment</h3>
 <p>Premium characters bringing excitement to your events.</p>
 </div>
 
-<div class="service">
+<div class="service-card">
 <h3>Mascot Experiences</h3>
 <p>Interactive mascots perfect for birthdays and celebrations.</p>
 </div>
 
-<div class="service">
+<div class="service-card">
 <h3>Event Activations</h3>
 <p>Creating unforgettable event moments and guest engagement.</p>
 </div>
 
-</div>
-
 </section>
 
+<!-- GALLERY -->
 
 <section class="gallery">
 
-<h2>Gallery</h2>
+<h2>Gallery of Steeze</h2>
 
-<div class="gallery-grid">
+<div class="slider">
 
-<div class="gallery-item">
+<div class="slide">
 <img src="event1.JPG">
 <div class="caption">Premium Character Entertainment</div>
 </div>
 
-<div class="gallery-item">
+<div class="slide">
 <img src="event2.JPG">
-<div class="caption">Premium Character Displays</div>
+<div class="caption">Transformers Appearance</div>
 </div>
 
-<div class="gallery-item">
+<div class="slide">
 <img src="event3.JPG">
-<div class="caption">Luxury Birthday Celebrations</div>
+<div class="caption">Mascot Event Experience</div>
 </div>
 
-<div class="gallery-item">
+<div class="slide">
 <img src="event4.JPG">
-<div class="caption">Mascot Character Entertainment</div>
+<div class="caption">Kids Entertainment Moments</div>
 </div>
 
-<div class="gallery-item">
+<div class="slide">
 <img src="event5.JPG">
-<div class="caption">Interactive Robot Character Experience</div>
+<div class="caption">Character Meet & Greet</div>
 </div>
 
-<div class="gallery-item">
+<div class="slide">
 <img src="event6.JPG">
-<div class="caption">Premium Event Photo Moments</div>
+<div class="caption">Premium Event Activation</div>
 </div>
 
-<div class="gallery-item">
+<div class="slide">
 <img src="event7.JPG">
-<div class="caption">Family Event Entertainment Experience</div>
+<div class="caption">Luxury Mascot Experience</div>
 </div>
 
 </div>
 
 </section>
 
-
 <footer>
-
-© Premium Concept
-
+© 2026 Premium Concept. All rights reserved.
 </footer>
+
+<script>
+
+let slideIndex=0;
+showSlides();
+
+function showSlides(){
+
+let slides=document.getElementsByClassName("slide");
+
+for(let i=0;i<slides.length;i++){
+slides[i].style.display="none";
+}
+
+slideIndex++;
+
+if(slideIndex>slides.length){
+slideIndex=1;
+}
+
+slides[slideIndex-1].style.display="block";
+
+setTimeout(showSlides,3000);
+}
+
+</script>
 
 </body>
 </html>
