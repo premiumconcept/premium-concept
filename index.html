@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Premium Concept</title>
 
 <style>
@@ -15,109 +16,114 @@ color:white;
 text-align:center;
 }
 
-/* HERO SECTION */
+/* HERO */
 
 .hero{
-background: radial-gradient(circle at center, #3a2a00, #000000 70%);
-padding:100px 20px;
+padding:80px 20px;
+background: radial-gradient(circle, rgba(255,174,0,0.25) 0%, black 70%);
 }
 
 .logo{
-width:120px;
+width:220px;
 margin-bottom:20px;
 }
 
 .hero h1{
 font-size:38px;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
-.hero p{
-font-size:18px;
+.about{
+max-width:600px;
+margin:auto;
+font-size:17px;
+line-height:1.6;
 color:#ccc;
-margin-bottom:30px;
 }
-
-/* BOOK BUTTON */
 
 .book-btn{
+margin-top:30px;
 display:inline-block;
-background:#25D366;
+padding:14px 40px;
+background:#4CAF50;
 color:white;
-padding:15px 35px;
-border-radius:40px;
+border-radius:30px;
 text-decoration:none;
 font-size:18px;
-font-weight:bold;
-}
-
-.book-btn:hover{
-background:#1ebe5d;
 }
 
 /* SERVICES */
 
 .services{
-padding:80px 20px;
+padding:60px 20px;
 }
 
 .services h2{
 font-size:32px;
-margin-bottom:40px;
+margin-bottom:30px;
+}
+
+.service-slider{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding-bottom:20px;
+scroll-snap-type:x mandatory;
 }
 
 .service-card{
+min-width:280px;
 background:#111;
 padding:30px;
-margin:20px auto;
-border-radius:12px;
-max-width:500px;
-box-shadow:0 0 15px rgba(255,215,0,0.2);
+border-radius:20px;
+box-shadow:0 0 25px rgba(255,174,0,0.2);
+scroll-snap-align:center;
 }
 
 .service-card h3{
 margin-bottom:10px;
 }
 
+.service-card p{
+color:#ccc;
+}
+
 /* GALLERY */
 
 .gallery{
-padding:80px 20px;
+padding:60px 20px;
 }
 
 .gallery h2{
 font-size:32px;
-margin-bottom:30px;
+margin-bottom:20px;
 }
 
-.slider{
+.gallery-slider{
 position:relative;
-max-width:500px;
+max-width:400px;
 margin:auto;
-overflow:hidden;
-border-radius:12px;
 }
 
-.slide{
+.gallery-slider img{
+width:100%;
+border-radius:20px;
 display:none;
 }
 
-.slide img{
-width:100%;
-border-radius:12px;
+.gallery-slider img.active{
+display:block;
 }
 
 .caption{
 margin-top:10px;
-color:#ddd;
+color:#ccc;
 }
 
 /* FOOTER */
 
 footer{
-margin-top:80px;
-padding:30px;
-border-top:1px solid #222;
+padding:40px 20px;
 color:#aaa;
 font-size:14px;
 }
@@ -131,21 +137,31 @@ font-size:14px;
 
 <section class="hero">
 
-<img src="logo.svg" class="logo">
+<img src="logo.png" class="logo">
 
-<h1>Premium Character Entertainment</h1>
+<h1>Where Premium Meets Fun</h1>
 
-<p>Luxury event characters, mascots and unforgettable entertainment experiences.</p>
+<div class="about">
+Lagos premium mascot & costume entertainment brand for kids
+and corporate events. We create unforgettable memories
+with class, excellence and energy.
+</div>
 
-<a class="book-btn" href="https://wa.me/2348132370407">Book Us</a>
+<a class="book-btn"
+href="https://wa.me/2348132370407">
+Book Us
+</a>
 
 </section>
+
 
 <!-- SERVICES -->
 
 <section class="services">
 
 <h2>Our Services</h2>
+
+<div class="service-slider">
 
 <div class="service-card">
 <h3>Character Entertainment</h3>
@@ -162,7 +178,10 @@ font-size:14px;
 <p>Creating unforgettable event moments and guest engagement.</p>
 </div>
 
+</div>
+
 </section>
+
 
 <!-- GALLERY -->
 
@@ -170,74 +189,39 @@ font-size:14px;
 
 <h2>Gallery of Steeze</h2>
 
-<div class="slider">
+<div class="gallery-slider">
 
-<div class="slide">
-<img src="event1.JPG">
-<div class="caption">Premium Character Entertainment</div>
-</div>
-
-<div class="slide">
+<img src="event1.JPG" class="active">
 <img src="event2.JPG">
-<div class="caption">Transformers Appearance</div>
-</div>
-
-<div class="slide">
 <img src="event3.JPG">
-<div class="caption">Mascot Event Experience</div>
-</div>
-
-<div class="slide">
 <img src="event4.JPG">
-<div class="caption">Kids Entertainment Moments</div>
-</div>
-
-<div class="slide">
 <img src="event5.JPG">
-<div class="caption">Character Meet & Greet</div>
-</div>
-
-<div class="slide">
 <img src="event6.JPG">
-<div class="caption">Premium Event Activation</div>
-</div>
-
-<div class="slide">
 <img src="event7.JPG">
-<div class="caption">Luxury Mascot Experience</div>
-</div>
 
 </div>
+
+<div class="caption">Premium Character Entertainment</div>
 
 </section>
 
+
 <footer>
+
 © 2026 Premium Concept. All rights reserved.
+
 </footer>
 
 <script>
 
-let slideIndex=0;
-showSlides();
+let slides=document.querySelectorAll(".gallery-slider img")
+let index=0
 
-function showSlides(){
-
-let slides=document.getElementsByClassName("slide");
-
-for(let i=0;i<slides.length;i++){
-slides[i].style.display="none";
-}
-
-slideIndex++;
-
-if(slideIndex>slides.length){
-slideIndex=1;
-}
-
-slides[slideIndex-1].style.display="block";
-
-setTimeout(showSlides,3000);
-}
+setInterval(()=>{
+slides[index].classList.remove("active")
+index=(index+1)%slides.length
+slides[index].classList.add("active")
+},3000)
 
 </script>
 
