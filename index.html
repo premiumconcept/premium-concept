@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Premium Concept</title>
 
 <style>
@@ -16,116 +15,112 @@ color:white;
 text-align:center;
 }
 
-/* HERO */
+/* GOLD GLOW BACKGROUND */
 
 .hero{
 padding:80px 20px;
-background: radial-gradient(circle, rgba(255,174,0,0.25) 0%, black 70%);
+background: radial-gradient(circle at center,#6b4a00 0%,#000 60%);
 }
 
+/* LOGO */
+
 .logo{
-width:220px;
+width:200px;
 margin-bottom:20px;
 }
 
+/* HERO TITLE */
+
 .hero h1{
-font-size:38px;
+font-size:42px;
 margin-bottom:15px;
 }
 
+/* ABOUT TEXT */
+
 .about{
+font-size:18px;
 max-width:600px;
 margin:auto;
-font-size:17px;
 line-height:1.6;
-color:#ccc;
+color:#d6d6d6;
 }
 
-.book-btn{
-margin-top:30px;
+/* BOOK BUTTON */
+
+.btn{
 display:inline-block;
-padding:14px 40px;
-background:#4CAF50;
-color:white;
-border-radius:30px;
+margin-top:30px;
+padding:15px 40px;
+background:#65b76d;
+border-radius:40px;
 text-decoration:none;
+color:white;
 font-size:18px;
 }
 
 /* SERVICES */
 
 .services{
-padding:60px 20px;
+padding:70px 20px;
 }
 
 .services h2{
-font-size:32px;
-margin-bottom:30px;
+font-size:36px;
+margin-bottom:40px;
 }
 
-.service-slider{
+.slider{
 display:flex;
 overflow-x:auto;
 gap:20px;
-padding-bottom:20px;
+padding:20px;
 scroll-snap-type:x mandatory;
 }
 
-.service-card{
-min-width:280px;
+.card{
+min-width:260px;
 background:#111;
-padding:30px;
 border-radius:20px;
-box-shadow:0 0 25px rgba(255,174,0,0.2);
+padding:30px;
 scroll-snap-align:center;
+box-shadow:0 0 25px rgba(255,170,0,0.25);
 }
 
-.service-card h3{
-margin-bottom:10px;
-}
-
-.service-card p{
-color:#ccc;
+.card h3{
+margin-bottom:15px;
 }
 
 /* GALLERY */
 
 .gallery{
-padding:60px 20px;
+padding:70px 20px;
 }
 
 .gallery h2{
-font-size:32px;
-margin-bottom:20px;
+font-size:36px;
+margin-bottom:40px;
 }
 
-.gallery-slider{
-position:relative;
-max-width:400px;
-margin:auto;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }
 
-.gallery-slider img{
+.grid img{
 width:100%;
-border-radius:20px;
-display:none;
-}
-
-.gallery-slider img.active{
-display:block;
-}
-
-.caption{
-margin-top:10px;
-color:#ccc;
+border-radius:12px;
 }
 
 /* FOOTER */
 
 footer{
-padding:40px 20px;
-color:#aaa;
+margin-top:60px;
+padding:20px;
+border-top:1px solid #333;
 font-size:14px;
+color:#888;
 }
 
 </style>
@@ -137,20 +132,17 @@ font-size:14px;
 
 <section class="hero">
 
-<img src="logo.png" class="logo">
+<img src="logo.svg" class="logo">
 
 <h1>Where Premium Meets Fun</h1>
 
-<div class="about">
+<p class="about">
 Lagos premium mascot & costume entertainment brand for kids
 and corporate events. We create unforgettable memories
 with class, excellence and energy.
-</div>
+</p>
 
-<a class="book-btn"
-href="https://wa.me/2348132370407">
-Book Us
-</a>
+<a href="https://wa.me/2348132370407" class="btn">Book Us</a>
 
 </section>
 
@@ -161,19 +153,19 @@ Book Us
 
 <h2>Our Services</h2>
 
-<div class="service-slider">
+<div class="slider">
 
-<div class="service-card">
+<div class="card">
 <h3>Character Entertainment</h3>
 <p>Premium characters bringing excitement to your events.</p>
 </div>
 
-<div class="service-card">
+<div class="card">
 <h3>Mascot Experiences</h3>
 <p>Interactive mascots perfect for birthdays and celebrations.</p>
 </div>
 
-<div class="service-card">
+<div class="card">
 <h3>Event Activations</h3>
 <p>Creating unforgettable event moments and guest engagement.</p>
 </div>
@@ -189,9 +181,9 @@ Book Us
 
 <h2>Gallery of Steeze</h2>
 
-<div class="gallery-slider">
+<div class="grid">
 
-<img src="event1.JPG" class="active">
+<img src="event1.JPG">
 <img src="event2.JPG">
 <img src="event3.JPG">
 <img src="event4.JPG">
@@ -201,8 +193,6 @@ Book Us
 
 </div>
 
-<div class="caption">Premium Character Entertainment</div>
-
 </section>
 
 
@@ -211,19 +201,6 @@ Book Us
 © 2026 Premium Concept. All rights reserved.
 
 </footer>
-
-<script>
-
-let slides=document.querySelectorAll(".gallery-slider img")
-let index=0
-
-setInterval(()=>{
-slides[index].classList.remove("active")
-index=(index+1)%slides.length
-slides[index].classList.add("active")
-},3000)
-
-</script>
 
 </body>
 </html>
