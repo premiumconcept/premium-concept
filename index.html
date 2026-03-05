@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,48 +17,40 @@ color:white;
 text-align:center;
 }
 
-/* GOLD GLOW BACKGROUND */
+/* HERO */
 
 .hero{
-padding:100px 20px;
-background:radial-gradient(circle, rgba(255,170,0,0.25), black 60%);
+padding:80px 20px;
+background:radial-gradient(circle, rgba(255,165,0,0.35), black 70%);
 }
 
-/* LOGO */
-
-.logo{
-width:200px;
-margin-bottom:30px;
+.hero img{
+width:160px;
+margin-bottom:20px;
 }
-
-/* HEADLINE */
 
 .hero h1{
 font-size:42px;
 margin-bottom:20px;
 }
 
-/* ABOUT TEXT */
-
 .hero p{
 max-width:600px;
 margin:auto;
+line-height:1.7;
 font-size:18px;
-line-height:1.6;
 color:#ddd;
 }
 
-/* BUTTON */
-
-.btn{
-display:inline-block;
+.book-btn{
 margin-top:30px;
-padding:15px 35px;
-background:#6cc16c;
-color:white;
-text-decoration:none;
+display:inline-block;
+padding:14px 35px;
+background:#66aa55;
 border-radius:40px;
+color:white;
 font-size:18px;
+text-decoration:none;
 }
 
 /* SERVICES */
@@ -73,30 +64,25 @@ font-size:34px;
 margin-bottom:40px;
 }
 
-.services-slider{
+.service-slider{
 display:flex;
 overflow-x:auto;
-gap:30px;
-scroll-snap-type:x mandatory;
+gap:20px;
 padding:20px;
+scroll-snap-type:x mandatory;
 }
 
 .service-card{
-min-width:300px;
-background:#111;
-padding:40px;
-border-radius:15px;
+min-width:260px;
 scroll-snap-align:center;
-box-shadow:0 0 20px rgba(255,170,0,0.25);
+background:#111;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 25px rgba(255,165,0,0.25);
 }
 
 .service-card h3{
-font-size:24px;
-margin-bottom:15px;
-}
-
-.service-card p{
-color:#ccc;
+margin-bottom:10px;
 }
 
 /* GALLERY */
@@ -107,87 +93,85 @@ padding:80px 20px;
 
 #gallery h2{
 font-size:34px;
-margin-bottom:30px;
+margin-bottom:40px;
 }
 
 .gallery-slider{
 position:relative;
-max-width:800px;
+max-width:700px;
 margin:auto;
-overflow:hidden;
-border-radius:15px;
-box-shadow:0 0 25px rgba(255,170,0,0.4);
 }
 
-.slides img{
-width:100%;
+.slide{
 display:none;
-border-radius:15px;
 }
 
-.slides img.active{
+.slide.active{
 display:block;
 }
 
-.prev,
-.next{
+.slide img{
+width:100%;
+border-radius:10px;
+}
+
+.caption{
+margin-top:10px;
+color:#ddd;
+}
+
+.prev, .next{
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.5);
 border:none;
 color:white;
 font-size:30px;
-padding:10px 15px;
+padding:10px;
 cursor:pointer;
 }
 
 .prev{
-left:10px;
+left:-40px;
 }
 
 .next{
-right:10px;
+right:-40px;
 }
 
 /* FOOTER */
 
 footer{
-margin-top:80px;
-padding:40px 20px;
-border-top:1px solid #222;
+padding:40px;
 color:#aaa;
+font-size:14px;
+border-top:1px solid #222;
+margin-top:80px;
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- HERO SECTION -->
+<!-- HERO -->
 
 <section class="hero">
 
-<img src="logo.svg" class="logo">
+<img src="logo.svg">
 
 <h1>Where Premium Meets Fun</h1>
 
 <p>
-
 Lagos premium mascot & costume entertainment brand for kids
 and corporate events. We create unforgettable memories
 with class, excellence and energy.
-
 </p>
 
-<a href="#" class="btn">Book Us</a>
+<a class="book-btn" href="#">Book Us</a>
 
 </section>
-
-
 
 <!-- SERVICES -->
 
@@ -195,7 +179,7 @@ with class, excellence and energy.
 
 <h2>Our Services</h2>
 
-<div class="services-slider">
+<div class="service-slider">
 
 <div class="service-card">
 <h3>Character Entertainment</h3>
@@ -216,8 +200,6 @@ with class, excellence and energy.
 
 </section>
 
-
-
 <!-- GALLERY -->
 
 <section id="gallery">
@@ -228,16 +210,39 @@ with class, excellence and energy.
 
 <button class="prev">&#10094;</button>
 
-<div class="slides">
+<div class="slide active">
+<img src="event1.JPG">
+<p class="caption">Premium Character Entertainment</p>
+</div>
 
-<img src="event1.JPG" class="slide active">
-<img src="event2.JPG" class="slide">
-<img src="event3.JPG" class="slide">
-<img src="event4.JPG" class="slide">
-<img src="event5.JPG" class="slide">
-<img src="event6.JPG" class="slide">
-<img src="event7.JPG" class="slide">
+<div class="slide">
+<img src="event2.JPG">
+<p class="caption">Premium Character Displays</p>
+</div>
 
+<div class="slide">
+<img src="event3.JPG">
+<p class="caption">Luxury Birthday Celebrations</p>
+</div>
+
+<div class="slide">
+<img src="event4.JPG">
+<p class="caption">Mascot Character Entertainment</p>
+</div>
+
+<div class="slide">
+<img src="event5.JPG">
+<p class="caption">Interactive Robot Character Experience</p>
+</div>
+
+<div class="slide">
+<img src="event6.JPG">
+<p class="caption">Premium Event Photo Moments</p>
+</div>
+
+<div class="slide">
+<img src="event7.JPG">
+<p class="caption">Family Event Entertainment Experience</p>
 </div>
 
 <button class="next">&#10095;</button>
@@ -246,59 +251,59 @@ with class, excellence and energy.
 
 </section>
 
-
-
-<!-- FOOTER -->
-
 <footer>
 
-<p>© 2026 Premium Concept. All rights reserved.</p>
+© 2026 Premium Concept. All rights reserved.
 
 </footer>
 
-
-
 <script>
 
-/* GALLERY SLIDESHOW */
+/* GALLERY SLIDER */
 
-let slides=document.querySelectorAll(".slide")
-let index=0
+let slides = document.querySelectorAll(".slide");
+
+let index = 0;
 
 function showSlide(i){
 
-slides.forEach(slide=>slide.classList.remove("active"))
+slides.forEach(slide => slide.classList.remove("active"));
 
-slides[i].classList.add("active")
-
-}
-
-document.querySelector(".next").onclick=function(){
-
-index=(index+1)%slides.length
-
-showSlide(index)
+slides[i].classList.add("active");
 
 }
 
-document.querySelector(".prev").onclick=function(){
+document.querySelector(".next").onclick = () =>{
 
-index=(index-1+slides.length)%slides.length
+index++;
 
-showSlide(index)
+if(index >= slides.length){index = 0;}
 
-}
+showSlide(index);
+
+};
+
+document.querySelector(".prev").onclick = () =>{
+
+index--;
+
+if(index < 0){index = slides.length - 1;}
+
+showSlide(index);
+
+};
 
 setInterval(()=>{
 
-index=(index+1)%slides.length
+index++;
 
-showSlide(index)
+if(index >= slides.length){index = 0;}
 
-},4000)
+showSlide(index);
+
+},4000);
 
 </script>
-
 
 </body>
 
