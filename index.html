@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Premium Concept</title>
 
 <style>
@@ -18,117 +21,153 @@ text-align:center;
 /* GOLD GLOW BACKGROUND */
 
 .hero{
-padding:80px 20px;
-background: radial-gradient(circle at center,#6b4a00 0%,#000 60%);
+padding:100px 20px;
+background:radial-gradient(circle, rgba(255,170,0,0.25), black 60%);
 }
 
 /* LOGO */
 
 .logo{
 width:200px;
-margin-bottom:20px;
+margin-bottom:30px;
 }
 
-/* HERO TITLE */
+/* HEADLINE */
 
 .hero h1{
 font-size:42px;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 /* ABOUT TEXT */
 
-.about{
-font-size:18px;
+.hero p{
 max-width:600px;
 margin:auto;
+font-size:18px;
 line-height:1.6;
-color:#d6d6d6;
+color:#ddd;
 }
 
-/* BOOK BUTTON */
+/* BUTTON */
 
 .btn{
 display:inline-block;
 margin-top:30px;
-padding:15px 40px;
-background:#65b76d;
-border-radius:40px;
-text-decoration:none;
+padding:15px 35px;
+background:#6cc16c;
 color:white;
+text-decoration:none;
+border-radius:40px;
 font-size:18px;
 }
 
 /* SERVICES */
 
 .services{
-padding:70px 20px;
+padding:80px 20px;
 }
 
 .services h2{
-font-size:36px;
+font-size:34px;
 margin-bottom:40px;
 }
 
-.slider{
+.services-slider{
 display:flex;
 overflow-x:auto;
-gap:20px;
-padding:20px;
+gap:30px;
 scroll-snap-type:x mandatory;
+padding:20px;
 }
 
-.card{
-min-width:260px;
+.service-card{
+min-width:300px;
 background:#111;
-border-radius:20px;
-padding:30px;
+padding:40px;
+border-radius:15px;
 scroll-snap-align:center;
-box-shadow:0 0 25px rgba(255,170,0,0.25);
+box-shadow:0 0 20px rgba(255,170,0,0.25);
 }
 
-.card h3{
+.service-card h3{
+font-size:24px;
 margin-bottom:15px;
+}
+
+.service-card p{
+color:#ccc;
 }
 
 /* GALLERY */
 
-.gallery{
-padding:70px 20px;
+#gallery{
+padding:80px 20px;
 }
 
-.gallery h2{
-font-size:36px;
-margin-bottom:40px;
+#gallery h2{
+font-size:34px;
+margin-bottom:30px;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+.gallery-slider{
+position:relative;
+max-width:800px;
+margin:auto;
+overflow:hidden;
+border-radius:15px;
+box-shadow:0 0 25px rgba(255,170,0,0.4);
 }
 
-.grid img{
+.slides img{
 width:100%;
-border-radius:12px;
+display:none;
+border-radius:15px;
+}
+
+.slides img.active{
+display:block;
+}
+
+.prev,
+.next{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.6);
+border:none;
+color:white;
+font-size:30px;
+padding:10px 15px;
+cursor:pointer;
+}
+
+.prev{
+left:10px;
+}
+
+.next{
+right:10px;
 }
 
 /* FOOTER */
 
 footer{
-margin-top:60px;
-padding:20px;
-border-top:1px solid #333;
-font-size:14px;
-color:#888;
+margin-top:80px;
+padding:40px 20px;
+border-top:1px solid #222;
+color:#aaa;
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- HERO -->
+
+<!-- HERO SECTION -->
 
 <section class="hero">
 
@@ -136,15 +175,18 @@ color:#888;
 
 <h1>Where Premium Meets Fun</h1>
 
-<p class="about">
+<p>
+
 Lagos premium mascot & costume entertainment brand for kids
 and corporate events. We create unforgettable memories
 with class, excellence and energy.
+
 </p>
 
-<a href="https://wa.me/2348132370407" class="btn">Book Us</a>
+<a href="#" class="btn">Book Us</a>
 
 </section>
+
 
 
 <!-- SERVICES -->
@@ -153,19 +195,19 @@ with class, excellence and energy.
 
 <h2>Our Services</h2>
 
-<div class="slider">
+<div class="services-slider">
 
-<div class="card">
+<div class="service-card">
 <h3>Character Entertainment</h3>
 <p>Premium characters bringing excitement to your events.</p>
 </div>
 
-<div class="card">
+<div class="service-card">
 <h3>Mascot Experiences</h3>
 <p>Interactive mascots perfect for birthdays and celebrations.</p>
 </div>
 
-<div class="card">
+<div class="service-card">
 <h3>Event Activations</h3>
 <p>Creating unforgettable event moments and guest engagement.</p>
 </div>
@@ -175,32 +217,89 @@ with class, excellence and energy.
 </section>
 
 
+
 <!-- GALLERY -->
 
-<section class="gallery">
+<section id="gallery">
 
-<h2>Gallery of Steeze</h2>
+<h2>Gallery of Steeze ✨</h2>
 
-<div class="grid">
+<div class="gallery-slider">
 
-<img src="event1.JPG">
-<img src="event2.JPG">
-<img src="event3.JPG">
-<img src="event4.JPG">
-<img src="event5.JPG">
-<img src="event6.JPG">
-<img src="event7.JPG">
+<button class="prev">&#10094;</button>
+
+<div class="slides">
+
+<img src="event1.JPG" class="slide active">
+<img src="event2.JPG" class="slide">
+<img src="event3.JPG" class="slide">
+<img src="event4.JPG" class="slide">
+<img src="event5.JPG" class="slide">
+<img src="event6.JPG" class="slide">
+<img src="event7.JPG" class="slide">
+
+</div>
+
+<button class="next">&#10095;</button>
 
 </div>
 
 </section>
 
 
+
+<!-- FOOTER -->
+
 <footer>
 
-© 2026 Premium Concept. All rights reserved.
+<p>© 2026 Premium Concept. All rights reserved.</p>
 
 </footer>
 
+
+
+<script>
+
+/* GALLERY SLIDESHOW */
+
+let slides=document.querySelectorAll(".slide")
+let index=0
+
+function showSlide(i){
+
+slides.forEach(slide=>slide.classList.remove("active"))
+
+slides[i].classList.add("active")
+
+}
+
+document.querySelector(".next").onclick=function(){
+
+index=(index+1)%slides.length
+
+showSlide(index)
+
+}
+
+document.querySelector(".prev").onclick=function(){
+
+index=(index-1+slides.length)%slides.length
+
+showSlide(index)
+
+}
+
+setInterval(()=>{
+
+index=(index+1)%slides.length
+
+showSlide(index)
+
+},4000)
+
+</script>
+
+
 </body>
+
 </html>
